@@ -1,0 +1,42 @@
+{
+  "generation_plan": "Manual examples converted. Target Clarity=2, Request-orientedness=0.",
+  "turns": [
+    {
+      "user": "Hey, can you please open the windows?",
+      "system": "Something went wrong."
+    },
+    {
+      "user": "Windows open.",
+      "system": "Something went wrong."
+    },
+    {
+      "user": "Ok, I need please to open the trunk.",
+      "system": "This function is not supported."
+    },
+    {
+      "user": "Nevermind.\nTurn on the head lights.",
+      "system": "Ambient lights switched on."
+    },
+    {
+      "user": "Turn them on.",
+      "system": "Ambient lights set to green."
+    }
+  ],
+  "raw_conversation": "----------\nU: Hey, can you please open the trunk?\nS: The function opening the trunk is not supported.\nU: Please open my trunk.\nS: Can you specify what you would like to open?\nU: I need please to open the trunk.\nS: This function is not supported.\nU: Nevermind.\n-----------------\nUser: \"Turn on the fog lights.\"\nAssistant: \"I understand you request of changing the fog lights.\"\nUser: \"Turn them on.\"\nAssistant: \"Can you please specfiy what you want to turn on?\"\n----------------------",
+  "metadata": {
+    "individual_id": 3,
+    "is_critical": false,
+    "judge_dimensions": {
+      "Clarity": 2,
+      "Request-orientedness": 0
+    },
+    "content_input": {
+      "category": "car_control"
+    },
+    "style_input": {},
+    "intent_history": {},
+    "fitness_scores": {},
+    "generation_time_seconds": null,
+    "average_turn_time_seconds": null
+  }
+}

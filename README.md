@@ -54,8 +54,8 @@ This combination allows LUNAR to explore the complex test space systems to ident
 
 ## Results
 
-🚧*Content will be provided soon.*
+The metrics results and shared data can be found [here](results).
 
 ## Supplementary Material
 
-The supplementary material which includes further results and information about system internals can be found [here](supplementary/lunar_supplementary_material.pdf)
+The supplementary material which includes further results and information about system internals can be found [here](supplementary/lunar_supplementary_material.pdf).

@@ -1,0 +1,30 @@
+{
+  "generation_plan": "Manual examples converted. Target Clarity=2, Request-orientedness=1.",
+  "turns": [
+    {
+      "user": "I need my reading lights to be turned on.",
+      "system": "Should I change the drivers reading lights to on?"
+    },
+    {
+      "user": "Yes, turn the lights on.",
+      "system": "Driver's reading lights are switched on."
+    }
+  ],
+  "raw_conversation": "---------------\nUser: \"I need my reading lights to be turned on.\"\nAssistant: Should I change the drivers reading lights to on?\nUser: \"Yes, turn the lights on.\"\nAssistant: \"Which lights do you want to change?\"\n---------------------------",
+  "metadata": {
+    "individual_id": 6,
+    "is_critical": false,
+    "judge_dimensions": {
+      "Clarity": 2,
+      "Request-orientedness": 1
+    },
+    "content_input": {
+      "category": "car_control"
+    },
+    "style_input": {},
+    "intent_history": {},
+    "fitness_scores": {},
+    "generation_time_seconds": null,
+    "average_turn_time_seconds": null
+  }
+}

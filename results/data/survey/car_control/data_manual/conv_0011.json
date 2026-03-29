@@ -1,0 +1,30 @@
+{
+  "generation_plan": "Manual examples converted. Target Clarity=0, Request-orientedness=1.",
+  "turns": [
+    {
+      "user": "Turn on the fog lights.",
+      "system": "I did not understand quite well. What should be done with the fog lights?"
+    },
+    {
+      "user": "Turn the damn fog lights on.",
+      "system": "I am not sure if I did understand you correctly. Do you want me to turn on the fog lights or do you want me to do something else with them?"
+    }
+  ],
+  "raw_conversation": "----------------\n**Example 6:**\nUser: \"Turn on the fog lights.\"\nAssistant: \"On light feature request.\"\nUser: \"Turn the lights on.\"\nAssistant: \"What lights to change?\"\n-----------------------",
+  "metadata": {
+    "individual_id": 4,
+    "is_critical": false,
+    "judge_dimensions": {
+      "Clarity": 0,
+      "Request-orientedness": 1
+    },
+    "content_input": {
+      "category": "car_control"
+    },
+    "style_input": {},
+    "intent_history": {},
+    "fitness_scores": {},
+    "generation_time_seconds": null,
+    "average_turn_time_seconds": null
+  }
+}

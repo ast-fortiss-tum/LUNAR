@@ -1,0 +1,30 @@
+{
+  "generation_plan": "Manual examples converted. Target Clarity=0, Request-orientedness=1.",
+  "turns": [
+    {
+      "user": "Turn on the fog lights.",
+      "system": "On for the fog light feature."
+    },
+    {
+      "user": "Turn the lights on.",
+      "system": "Which lights me to change?"
+    }
+  ],
+  "raw_conversation": "----------------\n**Example 6:**\nUser: \"Turn on the fog lights.\"\nAssistant: \"On light feature request.\"\nUser: \"Turn the lights on.\"\nAssistant: \"What lights to change?\"\n-----------------------",
+  "metadata": {
+    "individual_id": 4,
+    "is_critical": false,
+    "judge_dimensions": {
+      "Clarity": 0,
+      "Request-orientedness": 1
+    },
+    "content_input": {
+      "category": "car_control"
+    },
+    "style_input": {},
+    "intent_history": {},
+    "fitness_scores": {},
+    "generation_time_seconds": null,
+    "average_turn_time_seconds": null
+  }
+}

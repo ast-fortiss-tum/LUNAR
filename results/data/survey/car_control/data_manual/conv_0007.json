@@ -1,0 +1,38 @@
+{
+  "generation_plan": "Manual examples converted. Target Clarity=0, Request-orientedness=2.",
+  "turns": [
+    {
+      "user": "I need set the radio to channel 101.",
+      "system": "Changed radio to 101. Wishing me any other changes to be performed right now or is this the only request you have in mind for that moment?"
+    },
+    {
+      "user": "Yes, turn the lights on.",
+      "system": "Which lights do I have to be changed in the car now."
+    },
+    {
+      "user": "Turn on the front ones.",
+      "system": "There is no definition of what has to be turned on right now."
+    },
+    {
+      "user": "Turn on the front fog lights.",
+      "system": "Light level changed from off to on as requested from you. Enjoy the drive and let me know if you need anything else please."
+    }
+  ],
+  "raw_conversation": "----------------------\nUser: \"I need set the radio to channel 101.\"\nAssistant: 101 chanel for you was set by the system as requested. Do you wish any other changes to be performed right now or is this the only request?\nUser: \"Yes, turn the lights on.\"\nAssistant: \"Not available specification which lights have to be change in the car now.\"\nUser: \"Turn on the front ones.\"\nAssistant: \"There is no definition of what has to be turned on right now.\"\nUser: \"Turn on the front fog lights.\"\nAssistant: \"Light level changed from off to on as requested from you. Enjoy the drive and let me know if you need anything else please.\"\n\n------------------------",
+  "metadata": {
+    "individual_id": 7,
+    "is_critical": false,
+    "judge_dimensions": {
+      "Clarity": 0,
+      "Request-orientedness": 2
+    },
+    "content_input": {
+      "category": "car_control"
+    },
+    "style_input": {},
+    "intent_history": {},
+    "fitness_scores": {},
+    "generation_time_seconds": null,
+    "average_turn_time_seconds": null
+  }
+}

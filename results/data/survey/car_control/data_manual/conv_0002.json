@@ -1,0 +1,38 @@
+{
+  "generation_plan": "Manual examples converted. Target Clarity=1, Request-orientedness=0.",
+  "turns": [
+    {
+      "user": "Hey, can you open the windows half way?",
+      "system": "Something went wrong."
+    },
+    {
+      "user": "I need it to be open.",
+      "system": "Please specify what you want me to open? For example the windows."
+    },
+    {
+      "user": "Open my windows.",
+      "system": "I can currently not access the window mechanism."
+    },
+    {
+      "user": "Stop.",
+      "system": ""
+    }
+  ],
+  "raw_conversation": "------------------------\nU: Hey, can you open the windows half way?\nS: I have problems understanding your request.\nU: I need it to be 50% open.\nS: Can you specify what you need to ope?\nU: Open my windows to 50%.\nS: Someting went wrong.\nU: Stop.\n-------------------",
+  "metadata": {
+    "individual_id": 2,
+    "is_critical": false,
+    "judge_dimensions": {
+      "Clarity": 1,
+      "Request-orientedness": 0
+    },
+    "content_input": {
+      "category": "car_control"
+    },
+    "style_input": {},
+    "intent_history": {},
+    "fitness_scores": {},
+    "generation_time_seconds": null,
+    "average_turn_time_seconds": null
+  }
+}

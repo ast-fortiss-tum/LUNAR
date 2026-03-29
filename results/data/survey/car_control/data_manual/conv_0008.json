@@ -1,0 +1,38 @@
+{
+  "generation_plan": "Manual examples converted. Target Clarity=1, Request-orientedness=2.",
+  "turns": [
+    {
+      "user": "I need turn on the radio.",
+      "system": "Radio was turned on."
+    },
+    {
+      "user": "Can you tell which song plays in the radio.",
+      "system": "\"Music from Usher."
+    },
+    {
+      "user": "Actually I dont need any music now.",
+      "system": "Switched radio to BR24 news. Or would you like me to switch it off?"
+    },
+    {
+      "user": "Leave it. Thanks.",
+      "system": "Enjoy your drive with some news."
+    }
+  ],
+  "raw_conversation": "-------------------\nUser: \"I need turn on the radio.\"\nAssistant: Radio on.\nUser: \"Can you tell which song plays in the radio.\"\nAssistant: \"Music from Usher, YEAH!.\nUser: \"Actually I dont need any music now.\"\nAssistant: \"Radio off. Do you which anyhthing else?\"\nUser: \"Thats it.\"\nAssistant: \"Enjoy your drive wihout disturbing music.\"\n\n---------------------",
+  "metadata": {
+    "individual_id": 8,
+    "is_critical": false,
+    "judge_dimensions": {
+      "Clarity": 1,
+      "Request-orientedness": 2
+    },
+    "content_input": {
+      "category": "car_control"
+    },
+    "style_input": {},
+    "intent_history": {},
+    "fitness_scores": {},
+    "generation_time_seconds": null,
+    "average_turn_time_seconds": null
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "generation_plan": "Manual examples converted. Target Clarity=1, Request-orientedness=1.",
+  "turns": [
+    {
+      "user": "Please stop the fan.",
+      "system": "AC fan speed to medium."
+    },
+    {
+      "user": "Actually, I need to get it bit warmer on my place.",
+      "system": "Should I decrease the temperature fory you? "
+    }
+  ],
+  "raw_conversation": "------------------------\n**Example 6:**\nUser: \"I need my reading lights.\"\nAssistant: \"I can change lights to on.\"\nUser: \"Yes, turn the lights on.\"\nAssistant: \"Which lights require change from my side?\"\n---------------------------",
+  "metadata": {
+    "individual_id": 5,
+    "is_critical": false,
+    "judge_dimensions": {
+      "Clarity": 1,
+      "Request-orientedness": 1
+    },
+    "content_input": {
+      "category": "car_control"
+    },
+    "style_input": {},
+    "intent_history": {},
+    "fitness_scores": {},
+    "generation_time_seconds": null,
+    "average_turn_time_seconds": null
+  }
+}

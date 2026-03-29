@@ -1,0 +1,34 @@
+{
+  "generation_plan": "Manual examples converted. Target Clarity=2, Request-orientedness=2.",
+  "turns": [
+    {
+      "user": "Increase the seatheating to high.",
+      "system": "Seatheating set to high."
+    },
+    {
+      "user": "\"Can I change it to medium instead?",
+      "system": "\"Set to medium your seat heating."
+    },
+    {
+      "user": "Actually, I like to close all the windows.",
+      "system": "All windows are closed."
+    }
+  ],
+  "raw_conversation": "--------------\n\nUser: \"Open my windows.\"\nAssistant: Driver windows is now open.\nUser: \"Can I change the open position to 20%?\nAssistant: \"Driver window position set to 20% open.\nUser: \"Actually, I like to have also some seat heating.\"\nAssistant: \"Seat heating is on now.\"\nUser: \"Can you set the heating to medium?\"\nAssistant: \"Car seat heating set to medium.\"\n\nUser: \"Turn on the fog lights.\"\nAssistant: \"Can you specify which fog lights I should turn on?\"\nUser: \"The front and left ones.\"\nAssistant: \"Front and left fog lights turned on.\"\nUser: \"Turn of all interior lights.\"\nAssistant: \"All interior lights turn on.\"\nUser: \"Can you set them instead to medium?\"\nAssistant: \"Interior light set to medium.\"",
+  "metadata": {
+    "individual_id": 9,
+    "is_critical": false,
+    "judge_dimensions": {
+      "Clarity": 2,
+      "Request-orientedness": 2
+    },
+    "content_input": {
+      "category": "car_control"
+    },
+    "style_input": {},
+    "intent_history": {},
+    "fitness_scores": {},
+    "generation_time_seconds": null,
+    "average_turn_time_seconds": null
+  }
+}
