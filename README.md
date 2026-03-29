@@ -35,7 +35,7 @@ LUNAR combines two key components:
 - **Genetic Optimization**  
   A search-based strategy is used to efficiently navigate the conversation space and identify failure-inducing dialogues.
 
-This combination allows LUNAR to scale to complex systems while maintaining effectiveness in fault detection.
+This combination allows LUNAR to explore the complex test space systems to identify failure revealing test inputs.
 
 ---
 
