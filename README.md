@@ -27,13 +27,16 @@ Testing conversational systems is inherently challenging due to the combinatoria
 
 ## Approach
 
-LUNAR combines two key components:
+LUNAR combines three key components:
 
 - **Intent-Based Formalization**  
   The conversation space is represented as a structured set of user utterance intents and possible system-user intent transitions, enabling systematic exploration.
 
 - **Genetic Optimization**  
   A search-based strategy is used to efficiently navigate the conversation space and identify failure-inducing dialogues.
+
+- **Generative Turn Generation**  
+  LLM-based utterance generation for human-like input generation.
 
 This combination allows LUNAR to explore the complex test space systems to identify failure revealing test inputs.
 
