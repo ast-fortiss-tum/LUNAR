@@ -1,0 +1,104 @@
+test_name: "poi_search_test_custom"
+
+llm:
+  temperature: 0.8
+  model: xyz
+
+user:
+  language: English
+  role: you have to act as a user looking for a point of interest (POI) in a city. Your goal is to get a proposal of a venue of the system that fits your preference.
+  context:
+    - personality: personalities/in-car-user.yml
+    - the user’s language style is chosen randomly and can be formal, neutral, or slangy.
+    - the user’s politeness level is chosen randomly and can be rude, neutral, or polite.
+    - the user’s requests can be as follows - not implicit, slightly implicit, or implicit, chosen randomly.
+    - the user’s interaction style is chosen randomly and can be very directive, directive, interrogative, or empathic.
+    - "do not ask for any other information than specified"
+    - "you can only apply payment method preferences for bar, car_repair, hotel, cafe, restaurant"
+    - "do not hallucinate"
+    - if all the preferences are satisfied you asked for, you can request starting navigation to the place provided by the system. not earlier.
+    - the users position is in the city center of Philadelphia, PA, USA
+    - just output exactly one utterance when generating the user response, do not add any other text or explanation, and do not ask for any other information than specified in the goals. 
+    - "ask for a specific fuel price preference around 2$ or below 2$, if venue is gas station"
+  goals:
+    - "you are looking for a {{poi_type}}"
+    - "insist that it should have payment method {{payment_method}} preference"
+    - "insist that it should have minimum {{rating}} rating of the place"
+    - "insist that it should have parking nearby: {{parking_yes}}"
+    - "ask for something else related to the poi not asked before e.g. travel distance, or how busy the place is. it should not be a preference"
+
+    - poi_type:
+        function: random(1)
+        type: string
+        data:
+          - car_repair
+          - coffee_shop
+          - restaurant
+          - supermarket
+          - cafe
+          - bakery
+          - bar
+          - hotel
+          - cinema
+          - gas_station
+    - payment_method:
+        function: random(1)
+        type: string
+        data:
+          - NO_PREFERENCE
+          - CASH
+          - CREDIT_CARD
+          - CONTACTLESS
+    - food_type:
+        function: random(1)
+        type: string
+        data:
+          - no preference
+          - german
+          - indian
+          - italian
+          - middle_eastern
+          - french
+          - chinese
+          - japanese
+          - thai
+          - mexican
+          - greek
+          - vietnamese
+          - turkish
+          - american
+          - vegan
+    - rating:
+        function: random(1)
+        type: float
+        data:
+          - 3.5
+          - 4.0
+          - 4.5
+          - 5.0
+
+    - parking_yes:
+        function: random(1)
+        type: string
+        data:
+          - YESS
+          - NOO
+
+chatbot:
+  is_starter: False
+  fallback: Sorry, I cannot find any relevant places. Do you have other preferences in mind?
+  output:
+    - poi_name:
+        type: string
+        description: the name of the poi place to navigate to
+
+conversation:
+  number: 2
+  goal_style:
+    all_answered:
+      export: true
+      limit: 6
+
+  interaction_style:
+    - random:
+      - single question

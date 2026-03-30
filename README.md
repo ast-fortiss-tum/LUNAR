@@ -40,21 +40,9 @@ LUNAR combines three key components:
 
 This combination allows LUNAR to explore the complex test space systems to identify failure revealing test inputs.
 
----
-
-## Installation
-
-🚧*Content will be provided soon.*
-
 ## Replication
 
-🚧*Content will be provided soon.*
-
-## Customization
-
-🚧*Content will be provided soon.*
-
-
+The code with installation and replication instructions is provided [here](code).
 ## Results
 
 The metrics results and shared data can be found [here](results).

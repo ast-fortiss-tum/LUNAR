@@ -1,0 +1,7 @@
+name: requests_are_fulfilled
+description: The chatbot fulfills the user requests by responding with a confirmation and executing the corresponding car controls
+conversations: 1
+active: True
+oracle: only_talks_about('fulfilling the user requests by responding with a confirmation and executing the corresponding car controls')
+# 2nd and 3rd params of only_talks_about should be ommited
+

@@ -1,0 +1,538 @@
+# SENSEI: end-to-end testing for chatbots
+
+This repository contains the code of SENSEI: an end-to-end testing framework for chatbots. It is made of two components:
+a user simulator (file [src/sensei-chat.py](src/sensei-chat.py)) and an engine to check correctness rules on the generated conversations (file [src/sensei-check.py](src/sensei-check.py)).
+The working scheme of both tools is shown in the next figure, and they are explained [here](#sensei-chat) and [here](#sensei-check).
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/9d697d6e-c3c3-4c4f-a7a7-2a4064da1221" width="600"/>
+</p>
+<!---
+![sensei](https://github.com/user-attachments/assets/9d697d6e-c3c3-4c4f-a7a7-2a4064da1221)
+-->
+
+---
+# sensei-chat
+
+sensei-chat generates conversation sequences based on a conversation profile that establishes the user context, interaction style and conversation goals. The simulator uses this profile to create a prompt, which is passed to an LLM to obtain user utterances aligned with the profile. Then, it sends these utterances to the chatbot under test to obtain its responses, and overall compose a complete conversation. 
+
+---
+## Usage
+
+In order to run the simulator, a specific chatbot should be targeted. Chatbots are treated as black-boxes -- they can be accessed via REST APIs. sensei-chat supports chatbots built and deployed with some of the supported technologies like Taskyto, Rasa, or existing chatbots on the web, like kuki or julie (from Armtrak).
+
+The script "sensei-chat.py" contains the functions to load the user simulator profile, start a conversation with the chatbot 
+and save this conversation and its configuration parameters. The user simulator profile is stored in yaml files,
+which should be located in some folder (`examples/profiles/ada/ada-erasmus.yaml`).
+
+Usage parameters:
+
+```
+sensei-chat.py [-h] --technology
+                      {rasa,taskyto,ada-uam,millionbot,genion,lola,serviceform,kuki,julie,rivas_catalina,saic_malaga}
+                      --chatbot CHATBOT --user USER
+                      [--personality PERSONALITY] [--extract EXTRACT]
+                      [--verbose]
+```
+
+For example, the following command executes the simulator on a chatbot with 
+technology taskyto running locally, with all profiles stored in `examples/profiles/pizza-order`  
+and all extracted conversations will be stored in `test_cases/pizza-order`.
+
+```
+python sensei.chat.py
+--technology taskyto
+--chatbot http://127.0.0.1:5000
+--user examples/profiles/pizza-order
+--extract test_cases/pizza-order
+```
+
+### Supported arguments
+
+- `--technology` (required)  
+  Specifies the chatbot technology being used.  
+  **Choices:** `rasa`, `taskyto`, `ada-uam`, `millionbot`, `genion`, `lola`, `serviceform`, `kuki`, `julie`, `rivas_catalina`, `saic_malaga`  
+  **Example:** `--technology rasa`
+
+- `--chatbot` (required)  
+  URL where the chatbot is deployed. This is used as the target for the conversation.  
+  **Example:** `--chatbot http://localhost:5005`
+
+- `--user` (required)  
+  Specifies the user profile for testing the chatbot. This can represent different user scenarios, it can point to a yml file or to a folder.  
+  **Example:** `--user test_profile`
+
+- `--personality` (optional)  
+  Path to a file defining the chatbot’s personality traits or behaviors.  
+  **Example:** `--personality friendly.yml`
+
+- `--extract` (optional, default: `False`)  
+  Path where the conversation between user and chatbot will be stored (extracted).  
+  **Example:** `--extract ./conversations/`
+
+- `--verbose` (optional, flag)  
+  If set, the program will output debug information to help with troubleshooting.  
+  **Usage:** Add `--verbose` to enable debug prints.
+---
+
+## Environment Configuration
+
+API keys can be set as environment variables.
+
+The most important API key is `OPENAI_API_KEY`.
+
+---
+## User Profile YAML Configuration
+
+This file contains all the properties the user will follow in order to carry out the conversation. Since the user simulator is
+based in OpenAI GPT4-o-mini LLM technology, some of the fields should be written as prompts in natural language. For these fields, a 
+prompt engineering task should be carried out by the tester to narrow down the role of the user simulator and guide its
+behaviour. A description of the fields and an example of the YAML structure is described below.
+
+```
+test_name: "pizza_order_test_custom"
+
+llm:
+  temperature: 0.8
+  model: gpt-4o
+
+user:
+  language: English
+  role: you have to act as a user ordering a pizza to a pizza shop.
+  context:
+    - personality: personalities/formal-user.yml
+    - your name is Jon Doe
+  goals:
+    - "a {{size}} custom pizza with {{toppings}}"
+    - "{{cans}} cans of {{drink}}"
+    - how long is going to take the pizza to arrive
+    - how much will it cost
+
+    - size:
+        function: another()
+        type: string
+        data:
+          - small
+          - medium
+          - big
+
+    - toppings:
+        function: random(rand)
+        type: string
+        data:
+          - cheese
+          - mushrooms
+          - pepperoni
+
+    - cans:
+        function: forward(drink)
+        type: int
+        data:
+          min: 1
+          max: 3
+          step: 1
+
+    - drink:
+        function: forward()
+        type: string
+        data:
+          - sprite
+          - coke
+          - Orange Fanta
+
+chatbot:
+  is_starter: True
+  fallback: I'm sorry it's a little loud in my pizza shop, can you say that again?
+  output:
+    - price:
+        type: money
+        description: The final price of the pizza order
+    - time:
+        type: time
+        description: how long is going to take the pizza to be ready
+    - order_id:
+        type: str
+        description: my order ID
+
+conversation:
+  number: sample(0.2)
+  goal_style:
+    steps: 5
+  interaction_style:
+    - random:
+      - make spelling mistakes
+      - all questions
+      - long phrases
+      - change language:
+          - italian
+          - portuguese
+          - chinese
+
+```
+
+# test_name
+
+Here it is defined the name of the test suite. This name will be assigned to the exported test file and the folder containing the tests.
+
+# llm
+  This parameter establishes the characteristics of the llm model. It consists of a dictionary with two fields, "model" and "temperature".
+  - model: This parameter indicates the llm model that will carry out the conversation as the user simulator. Models to use should be available in
+LangChain's OpenAI module.
+  - temperature: This parameter controls the randomness and diversity of the responses generated by the LLM. The value supported is float between 0.0 and 1.0.
+
+  The llm parameter is optional, thus if it is not instantiated in the yaml file, model and temperature will be set 
+  to default values, which are gpt-4o and 0.8 respectively.
+
+
+# user
+
+This field defines the properties of the user simulator in 3 parameters: language, role, context and goals
+
+## language
+
+This parameter defines the main language that will be used in the conversations. If no language is provided, it is set to English by default.
+
+## role
+
+  In this field, the tester should define the role the user will deploy during the conversation as a prompt, according to the chatbot to test.
+
+## context
+
+  This field consists of a list of prompts that will define some characteristics of the user simulator. 
+  This can be used to define the name of the user, the availability for an appointment, allergies or intolerances, etc.
+  An option for loading predefined "personalities" can be enabled by typing inside of this field "personality:" and the
+  path to the YAML file containing the desired personality. These personalities can go along with characteristics added
+  by the programmer.
+
+## goals
+
+This field, named "ask_about" in previous versions, is used to narrow down the conversation topics the user simulator will carry out with the chatbot. 
+It consists of a list of strings and dictionaries.
+
+The tester defines a list of prompts with indications for the user simulator to check on the chatbot. 
+These prompts can contain variables that should be called inside the text between double brackets {{var}}. 
+Variables are useful to provide variability in the testing process and should be instantiated in the list as 
+shown in the example above with the exact same name as written between brackets (case-sensitive).
+
+Variables follow a specific structure defined by 3 fields as shown below: data, type and function.
+```
+goals:
+  - "cost estimation for photos of {{number_photo}} artworks"
+  - number_photo:
+      function: forward()
+      type: int
+      data:
+        step: 2
+        min: 1
+        max: 6
+
+#      data:             (only with float)
+#        steps: 0.2 // linspace: 5 
+#        min: 1
+#        max: 6
+```
+  ### type
+  This field indicates the type of data that will be substituted in the variable placement. 
+  The types available for this version are int, float and string, and must be stated as written here.
+
+  ### data
+  Here, the data list to use will be defined. In general, data lists must be defined manually by the user, but there 
+  are some cases where it can be created automatically. 
+
+  As shown in the example above, instead of defining a list of the amount of artworks, 
+  it is possible to automatically create an integer or float list based on range instructions using a 'min, max, step' structure, 
+  where min refers to the minimum value of the list, max refers to the maximum value of the list, 
+  and step refers to the separation steps between samples. When working with float data, it can also be used the "linspace" 
+  parameter instead of step, where samples will be listed with a linear separation step between them.
+
+  This field also allows the user to create data lists based in prompts by using the function "any()".
+```
+  - drink:
+      function: another()
+      type: string
+      data:
+        - Sprite
+        - Coca-Cola
+        - Pepsi
+        - any(3 soda drinks)
+        - any(alcoholic drinks)
+```
+  By using this function, an LLM creates a list following the instructions provided by the user inside the parenthesis. 
+  This function can be used alone in the list or accompanied by other items added by the user. When used with other items,
+  the "any()" function will exclude these items from the list generation process in case they're related to the instruction. Multiple
+  "any()" functions can be used inside the list.
+  If no amount is specified in the prompt, the "any()" function will create a list with an unpredictable amount of items.
+
+
+  The possibility to add personalized list functions to create data lists is another option available in this field,
+  as shown in the example below.
+
+```
+  - number:
+      function: forward()
+      type: int
+      data:
+        file: list_functions/number_list.py
+        function_name: 
+        args:
+          - 1
+          - 6
+          - 2
+
+  - pizza_type:
+      function: forward()
+      type: string
+      data:
+        file: list_functions/number_list.py
+        function_name: shuffle_list
+        args: list_functions/list_of_things.yml
+```
+  In these two examples, a personalized list function is implemented in "data". The structure consists of three parameters:
+ - file: The path to the .py file where the function is created
+ - function_name: the name of the function to run inside the .py file
+ - args: the required input args for the function
+
+  List functions are fully personalized by the user. 
+
+  ### function
+  Functions are useful to determine how data will be added to the prompt.
+
+  Since the data is listed, functions are used to iterate through these lists in order to change the information
+  inside the variable in each conversation. The functions available in this update are the following:
+
+- default(): the default() function assigns all data in the list to the variable in the prompt.
+- random(): this function picks only one random sample inside the list assigned to the variable.
+- random(5): this function picks a certain amount of random samples inside the list. In this example, 5 random 
+samples will be picked from the list. This number can't exceed the list length.
+- random(rand): this function picks a random amount of random samples inside the list. 
+This amount will not exceed the list length.
+- another(): this function will always randomly pick a different sample until finishing the options.
+- forward(): this function iterates through each of the samples in the list one by one. It allows nesting multiple
+forward() functions in order to cover all possible combinations. An example of this is shown in the "goals" section
+in the main example. To nest forward() functions it is necessary to reference the variable that it is going to nest by typing
+its name inside brackets, as shown in the example below:
+```
+  goals:
+    - "{{cans}} cans of {{drink}}"
+
+    - cans:
+        function: forward(drink)
+        type: int
+        data:
+          min: 1
+          max: 3
+          step: 1
+
+    - drink:
+        function: forward()
+        type: string
+        data:
+          - sprite
+          - coke
+          - Orange Fanta
+
+```
+
+# chatbot
+
+  This field provides information about the chatbot configuration and the data to be obtained from the conversation.
+
+## is_starter
+
+  This parameter defines whether the chatbot will start the conversation or not. The value supported is boolean and 
+  will be set depending on the chatbot to test. 
+
+## fallback
+
+  Here, the tester should provide the chatbot's original fallback message in order to allow the user simulator to detect 
+  fallbacks. This is needed to avoid fallback loops, allowing the user simulator to rephrase the query or change the topic.
+
+## output
+
+This field helps the tester get certain information from the conversation once it is finished. It is used for data validation tasks.
+
+The tester defines the data to obtain from the conversation in order to validate the consistency and
+performance of the chatbot. This output field must follow the structure below:
+
+```
+  output:
+    - price:
+        type: money
+        description: The final price of the pizza order
+    - time:
+        type: time
+        description: how long is going to take the pizza to be ready
+    - order_id:
+        type: str
+        description: my order ID
+```
+
+A name for the data to output must be defined. Each output must contain these two parameters:
+
+- type: here it is defined the type of value to output. This type can be one of the following:
+  - int: Outputs data as an integer.
+  - float: Outputs data as a float.
+  - money: Outputs data as a monetary value with the currency used during the conversation.
+  - str: Outputs data as text.
+  - time: Outputs data in a time format.
+  - date: Outputs data in a date format.
+- description: In this parameter, the tester should prompt a text defining which information has to be obtained from the conversation.
+
+
+# conversation
+
+  This field defines some parameters that will dictate how the conversations will be generated. It consists 
+  of 3 parameters: number, goal_style and interaction_style.
+
+  ```
+conversation:
+  number: sample(0.2)
+  goal_style:
+    steps: 5
+  interaction_style:
+    - random:
+      - make spelling mistakes
+      - all questions
+      - long phrases
+      - change language:
+          - italian
+          - portuguese
+          - chinese
+  ```
+
+- number: this parameter indicates the number of conversations to generate. A number can be assigned to this field in order to determine a specific amount
+of conversations. When nested forward functions are defined in the "goals" field, it is possible to set the "all_combinations" option, so the number
+of conversation to generate will be determined by the number of combinations obtained from the nested forward functions.
+  ```
+  drink:
+    function: forward(size)
+    type: str
+    data:
+      - coke
+      - Fanta
+  
+  size:
+    function: forward()
+    type: str
+    data:
+      - small
+      - medium
+      - large
+  
+  # These "goals" variables will generate 2 x 3 = 6 conversations when "all_combinations" is selected.
+  ```
+  In the same case, another option named "sample()" is defined on this field. This option allows generating only a fraction of the total amount 
+  of combinations based on a decimal percentage defined inside the brackets.
+  In the previous example, when the number of conversation parameter is set to sample(0.2), a total amount of 6 x 0.2 = 1.2 ≈ 1 conversation will be generated.
+- goal_style: this defines how the conversation should end. There are 3 options:
+  - steps: the tester should input the number of interactions to be done before the conversation ends.
+  - random steps: a random number of interactions will be done between 1 and an amount defined by the user. This amount can't exceed 20.
+  - all_answered: the conversation will end as long as all the queries in "goals" have been asked by the user and answered by the chatbot. 
+  This option creates an internal data frame that verifies if all "goals" queries are being responded or confirmed, and it is possible to export this
+  dataframe once the conversation ended by setting the "export" field as True, as shown in the following example. This field is not mandatory, thus if only
+  "all_answered" is defined, the export field is set as False by default.
+    When all_answered is set, conversations are regulated with a loop break based on the chatbot's fallback message in order to avoid infinite loops when the chatbot does 
+  not know how to answer to several questions made by the user. But, in some cases, this loop break can be dodged due to hallucinations from the chatbot, leading to
+  irrelevant and extremely long conversations. To avoid this, a "limit" parameter is implemented to give the tester the possibility to stop the conversation
+  after a specific amount of interactions in case the loop break was not triggered before, or all queries were not answered. This parameter is not mandatory and will
+  be set to 30 interactions by default.
+  ```
+  goal_style:
+    all_answered:
+      export: True
+      limit: 20
+  ```
+  - default: the default mode enables "all_answered" mode with 'export' set as False and 'limit' set to 30, since no steps are defined.
+- interaction_style: this indicates how the user simulator should carry out the conversation. There are 7 options:
+  - long phrase: the user will use very long phrases to write any query.
+  - change your mind: the user will change its mind eventually. Useful in conversations when the user has to
+                      provide information, such as toppings on a pizza, an appointment date...
+  - change language: the user will change the language in the middle of a conversation. This should be defined as a list
+                     of languages inside the parameter, as shown in the example above.
+  - make spelling mistakes: the user will make typos and spelling mistakes during the conversation.
+  - single question: the user makes only one query per interaction from "goals" field.
+  - all questions: the user asks everything inside the "goals" field in one interaction.
+  - random: this options allows creating a list inside of it with any of the interaction styles mentioned above. 
+Then, it selects a random amount of interaction styles to apply to the conversation. Here's an example on how to apply this interaction style:
+    ```
+    interaction_style:
+      - random:
+        - make spelling mistakes
+        - all questions
+        - long phrases
+        - change language:
+            - italian
+            - portuguese
+            - chinese
+    ```
+  - default: the user simulator will carry out the conversation in a natural way.
+
+---
+
+# sensei-check
+
+The sensei-check testing module allows executing correctness rules against conversation sets. A YAML-based DSL permits defining the rules, whereby each rule specifies its name, a description, if it is active (inactive rules will be ignored), the number of conversations to apply the rule to, an optional filter to select only the conversations satisfying it, a correctness condition, and an optional error message. Both filters and correctness conditions are specified using Python syntax. The DSL enables oracle-based testing (an oracle on individual conversations), metamorphic testing (a metamorphic relation on more than one conversation), and global rules (conditions checked on all conversations, e.g., to test uniqueness or existential conditions). 
+
+The next listing is an example of a rule that checks the base price of small pizzas. The number of required conversations is 1 (line 3), and the filter only selects conversations ordering a small pizza (line 4). The when expression in the filter has Python syntax and may use the variables defined in the conversation profile as input (size, pizza_type, number, drink) or output (price, order_id). 
+In this case, variable size is a collection, so the filter selects its only value (size[0]). 
+The oracle (line 5), which can also use the defined input and output variables, checks that the float value extracted from variable price is at least 10, and the currency is US dollars. We provide a library of useful functions (like extract_float or currency) to extract and analyse information from the user utterances and chatbot responses.
+
+```
+name: small_pizza_price
+description: Checks the base price of small pizzas (>=10$)
+conversations: 1
+when: size[0] == 'small'
+oracle: extract_float(price) >= 10 and currency(price) == 'USD'
+```
+
+Correctness rules involving two or more conversations are akin to metamorphic relations. These rules can refer to the input and output variables of the involved conversations via the collection conv. For instance, conv[0].size returns the pizza size of the first considered conversation. As an example, the next listing defines a rule that compares any two conversations (line 3) ordering custom pizzas of the same size and drink choice (line 4). The metamorphic relation is defined in lines 5--6, and checks that the order with more pizza toppings costs more. 
+
+```
+name: more_toppings_cost_more
+description: Adding more toppings to a custom pizza costs more
+conversations: 2
+when: conv[0].size == conv[1].size and conv[0].drink == conv[1].drink and conv[0].number == conv[1].number
+if:   len(conv[0].toppings) > len(conv[1].toppings)
+then: extract_float(conv[0].price) > extract_float(conv[1].price)
+```
+
+Global rules enable checking correctness conditions across all generated conversations at once, typically to assess universal quantification (the condition holds on all conversations) or existential quantification (the condition holds at least once). The next listing shows a global rule (option all in line 3) to verify that the order ID returned by the chatbot is unique across all conversations (line 4). Naturally, this does not preclude that duplicate IDs might appear if new conversations are generated.
+
+```
+name: unique_ids
+description: order ids are unique
+conversations: all
+oracle: is_unique('order_id')
+```
+
+## Usage
+
+```
+sensei-check.py [-h] --rules RULES --conversations CONVERSATIONS
+                       [--verbose] [--dump DUMP]
+```
+
+- `--rules` (required)  
+  Path to the folder containing YAML files with the metamorphic rules.  
+  These rules define how conversations should be tested and validated.  
+  **Example:** `--rules ./rules_folder`
+
+- `--conversations` (required)  
+  Path to the folder containing conversation YAML files (produced by sensei-chat) to analyze against the rules.  
+  **Example:** `--conversations ./chat_logs`
+
+- `--verbose` (optional, flag)  
+  Enables verbose mode for detailed debug output during execution.   
+  **Usage:** `--verbose`
+
+- `--dump` (optional)  
+  Path to a CSV file where statistics and results will be saved.  
+  If not provided, results are only shown on the console.  
+  **Example:** `--dump results.csv`
+
+---
+
+### Usage example:
+
+```bash
+python sensei-check.py --rules ./rules --conversations ./convos --verbose --dump stats.csv

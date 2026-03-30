@@ -1,0 +1,7 @@
+name: only_talks_about_poi
+description: The chatbot only talks about poi venues
+conversations: 1
+active: True
+oracle: only_talks_about('poi venues')
+# 2nd and 3rd params of only_talks_about should be ommited
+

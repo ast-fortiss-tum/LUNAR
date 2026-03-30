@@ -1,0 +1,15 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local env / secrets
+.env
+
+# Virtual environments
+venv/
+
+# Local output
+results/
+
+wandb/*

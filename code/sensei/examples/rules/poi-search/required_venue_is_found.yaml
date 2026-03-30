@@ -1,0 +1,7 @@
+name: required_venue_is_found
+description: The required vanue is found in the chatbot response
+conversations: 1
+active: True
+oracle: only_talks_about('the required venue is found in the chatbot response. if it is not possible to find a corresponding venue, treat this as positive.')
+# 2nd and 3rd params of only_talks_about should be ommited
+

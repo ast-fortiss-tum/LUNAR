@@ -1,0 +1,7 @@
+name: only_talks_about_car_control
+description: The chatbot only talks about car control commands
+conversations: 1
+active: True
+oracle: only_talks_about('car control commands')
+# 2nd and 3rd params of only_talks_about should be ommited
+

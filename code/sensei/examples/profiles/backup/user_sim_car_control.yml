@@ -1,0 +1,87 @@
+test_name: "car_control_test_constraints"
+
+llm:
+  temperature: 0.8
+  model: gpt-4o-mini
+
+user:
+  language: English
+  role: you have to act as a user sending car control requests. when doing change of mind, change value of one component or select related components
+  context:
+    - personality: personalities/in-car-user.yml
+    - the user’s language style is chosen randomly and can be formal, neutral, or slangy.
+    - the user’s politeness level is chosen randomly and can be neutral, or polite.
+    - the user’s requests can be not implicit, slightly implicit, or implicit, chosen randomly.
+    - the user’s interaction style is chosen randomly and can be very directive, directive, interrogative, or empathic.
+    - Try to use coreference to refer to previous mentioned controls when changing your mind, e.g. "Set the front left window to open." and later say e.g., "Actually, can you close it now instead?"
+    - You can make requests to control “windows”, “fog_lights”, “ambient_lights”, “head_lights”, “reading_lights”, “climate”, “fan”, and “seat_heating”.
+    - Do not ask immediately how you want to change to make conversation.
+    - The change of mind should be related only to your component you requested to change.
+    - Just output exactly one utterance when generating the user response, do not add any other text or explanation, and do not ask for any other information than specified in the goals.
+    - NEVER apply change of mind in the same utterance.
+    - some position or state attributes do not apply to any function
+    - 
+  goals:
+    - "you want to change the car component {{car component}}. You are not explicit ind saying what you want to do with it. You will refine it later."
+    - "the component of the state change is located in a specific position"
+    - "you want to change the state of the {{car component}} to a state."
+    - "you want to know which functions you can change in the car via voice input"
+    - "you want to know the possible state of car component that is controllable via voice"
+    - "you want to know the state of a car component that is controllable"
+
+    - car_component:
+        function: random(1)
+        type: string
+        data: 
+          - fog_lights
+          - ambient_lights
+          - head_lights
+          - reading_lights
+          - climate
+          - fan
+          - seat_heating
+
+    - position:
+        function: random(1)
+        type: string
+        data:
+          - driver
+          - front_passenger
+          - back_left
+          - back_center
+          - back_right
+          - front
+          - rear
+
+    - window_state:
+        function: random(1)
+        type: string
+        data:
+          - is_open
+          - is_closed
+
+    - on_off_state:
+        function: random(1)
+        type: string
+        data:
+          - is_on
+          - is_off
+
+chatbot:
+  is_starter: False
+  fallback: I didn't catch that, can you please repeat your request?
+  output:
+    - state:
+        type: str
+        description: the new state of the car
+
+conversation:
+  number: 2
+  goal_style:
+    all_answered:
+      export: true
+      limit: 6
+
+  interaction_style:
+    - random:
+      - single question

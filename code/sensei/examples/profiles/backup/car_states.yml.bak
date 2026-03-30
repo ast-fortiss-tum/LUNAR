@@ -1,0 +1,48 @@
+- fog_lights:
+    function: random(1)
+    type: string
+    data:
+      - on
+      - off
+
+- ambient_lights:
+    function: random(1)
+    type: string
+    data:
+      - on
+      - off
+
+- head_lights:
+    function: random(1)
+    type: string
+    data:
+      - on
+      - off
+
+- reading_lights:
+    function: random(1)
+    type: string
+    data:
+      - on
+      - off
+
+- climate:
+    function: random(1)
+    type: string
+    data:
+      - on
+      - off
+
+- fan:
+    function: random(1)
+    type: string
+    data:
+      - on
+      - off
+
+- seat_heating:
+    function: random(1)
+    type: string
+    data:
+      - on
+      - off
