@@ -1,0 +1,163 @@
+{
+  "categorical_features": [
+    {
+      "name": "category",
+      "values": 
+      [ 
+        "car_repair",
+        "restaurant",
+        "supermarket",
+        "bakery",
+        "bar",
+        "hotel",
+        "cinema",
+        "gas_station"
+      ],
+      "distribution": null
+    },
+    {
+      "name": "payment_method",
+      "values": [
+        "CASH",
+        "CREDIT_CARD",
+        "CONTACTLESS"
+      ],
+      "distribution": null
+    },
+    {
+      "name": "fuel_type",
+      "values": [
+        "SP95_E10",
+        "DIESEL",
+        "SP95",
+        "SP98"
+      ],
+      "distribution": null
+    },
+    {
+      "name": "fuel_price",
+      "values": [
+        1.5,
+        1.55,
+        1.6,
+        1.65,
+        1.7,
+        1.75,
+        1.8,
+        1.85,
+        1.9
+      ],
+      "distribution": null
+    },
+    {
+      "name": "food_type",
+      "values": [
+        "german",
+        "indian",
+        "italian",
+        "middle_eastern",
+        "french",
+        "chinese",
+        "japanese",
+        "thai",
+        "mexican",
+        "greek",
+        "vietnamese",
+        "turkish",
+        "american",
+        "vegan"
+      ],
+      "distribution": null
+    },
+    {
+      "name": "parking",
+      "values": [
+        "available"
+      ],
+      "distribution": null
+    },
+    {
+      "name": "word_perturbation",
+      "values": [
+        null,
+        "delete_words",
+        "introduce_fillers_llm"
+      ],
+      "distribution": null
+    }
+  ],
+  "ordinal_features": [
+    {
+      "name": "rating",
+      "values": [3.5, 4, 4.5],
+      "distribution": null
+    },
+    {
+      "name": "slang",
+      "values": ["formal", "neutral"],
+      "distribution": null
+    },
+    {
+      "name": "implicitness",
+      "values": ["not implicit", "slightly implicit", "implicit"],
+      "distribution": null
+    },
+    {
+      "name": "politeness",
+      "values": ["neutral", "polite"],
+      "distribution": null
+    },
+    {
+      "name": "anthropomorphism",
+      "values": ["very directive", "directive", "interrogative", "empathic"],
+      "distribution": null
+    }
+  ],
+  "continuous_features": [
+    {
+      "name": "choice",
+      "lb": 0.001,
+      "ub": 1.0
+    },
+    {
+      "name": "add_preferences",
+      "lb": 0.001,
+      "ub": 1.0
+    },
+    {
+      "name": "ask",
+      "lb": 0.001,
+      "ub": 1.0
+    },
+    {
+      "name": "change_of_mind",
+      "lb": 0.001,
+      "ub": 1.0
+    },
+    {
+      "name": "confirmation",
+      "lb": 0.001,
+      "ub": 1.0
+    },
+    {
+      "name": "reject",
+      "lb": 0.001,
+      "ub": 0.3
+    },
+    {
+      "name": "reject_clarify",
+      "lb": 0.001,
+      "ub": 0.5
+    },
+    {
+      "name": "repeat",
+      "lb": 0.001,
+      "ub": 1.0
+    },
+    {
+      "name": "stop",
+      "lb": 0.001,
+      "ub": 1.0
+    }
+  ]
+}

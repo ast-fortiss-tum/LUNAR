@@ -2,17 +2,8 @@ import sys
 from pathlib import Path
 import site
 
-for name in ["opensbt-llm", "OpenSBT-LLM"]:
-    base = Path("..") / name
-    if base.exists():
-        sys.path.insert(0, str(base))
-        site = base / "venv/lib/python3.11/site-packages"
-        if site.exists():
-            sys.path.insert(0, str(site))
-        break
-
-sys.path.insert(0,"/home/q680122/.pyenv/versions/3.11.8/envs/myvenv/lib/python3.11/site-packages/")
-
+# import here the lunar project and its dependencies as we are using its llm calling interface and
+# cost tracking
 
 from importlib.resources import path
 import time
@@ -33,7 +24,7 @@ from colorama import Fore, Style
 from technologies.chatbot_connectors import (
     Chatbot, ChatbotConvNavi, ChatbotRasa, ChatbotTaskyto, ChatbotAdaUam, ChatbotMillionBot,
     ChatbotLolaUMU, ChatbotServiceform, KukiChatbot, JulieChatbot, ChatbotCatalinaRivas, ChatbotSaicMalaga,
-    ChatbotGenion, ChatbotChatBMW
+    ChatbotGenion, ChatbotIndustry
 )
 from user_sim.data_extraction import DataExtraction
 from user_sim.role_structure import *
@@ -345,7 +336,7 @@ def parse_profiles(user_path):
 def build_chatbot(technology, chatbot) -> Chatbot:
     default = Chatbot
     chatbot_builder = {
-        'chatbmw' : ChatbotChatBMW,
+        'industry' : ChatbotIndustry,
         'convnavi': ChatbotConvNavi,
         'rasa': ChatbotRasa,
         'taskyto': ChatbotTaskyto,
@@ -666,7 +657,7 @@ def build_arg_parser() -> ArgumentParser:
         "--technology",
         required=True,
         choices=[
-            "chatbmw",
+            "industry",
             "convnavi",
             "rasa",
             "taskyto",

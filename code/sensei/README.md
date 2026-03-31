@@ -1,4 +1,4 @@
-# SENSEI: end-to-end testing for chatbots
+# SENSEI: end-to-end testing for chatbots (Adapted for Comparison Against LUNAR)
 
 This repository contains the code of SENSEI: an end-to-end testing framework for chatbots. It is made of two components:
 a user simulator (file [src/sensei-chat.py](src/sensei-chat.py)) and an engine to check correctness rules on the generated conversations (file [src/sensei-check.py](src/sensei-check.py)).

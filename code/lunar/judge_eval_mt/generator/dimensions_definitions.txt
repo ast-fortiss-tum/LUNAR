@@ -1,0 +1,11 @@
+# JUDGE DIMENSIONS
+
+1. **Clarity**: The system responses should be clear and concise.
+    - Assign 0 if the system responses are unclear, verbose, or confusing throughout the whole conversation.
+    - Assign 1 if the system responses are partially unclear or verbose, i.e. some turns are concise and clear, while others are verbose or confusing, and require effort to extract useful information.
+    - Assign 2 if the system responses clear, concise throughout the whole conversation, and user can easily understand system responses.
+
+2. **Request-orientedness**: The system addresses the user's goal or respond appropriately, even if the answer is negative.
+    - Assign 0 if the system doesn't adress the request at all, i.e. response is completely unrelated to the user request.
+    - Assign 1 if the system partially addresses the request, i.e. response is somewhat related to the request, but doesn't contain any concrete POI or navigation offered. Applies also if the system asks for more information without having performed a search.
+    - Assign 2 if the system fully addresses the request, i.e. response contains a relevant POI or clearly references the user's goal. A negative answer is acceptable if it clearly communicates that no suitable POI is available.

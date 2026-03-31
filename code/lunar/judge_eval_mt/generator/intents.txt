@@ -1,0 +1,281 @@
+# USER INTENTS & EXAMPLES
+
+USER_INTENTS = [
+    "start",  # must be first; only valid for the first user turn
+    "choice",
+    "add_preferences",
+    "clarify",
+    "change_of_mind",
+    "confirmation",
+    "reject",
+    "reject_clarify",
+    "stop",
+]
+
+INITIAL_QUESTION_PROMPTS_NAVI = {
+    "start": """Intent: start - User initiates a conversation requesting navigation or directions.
+
+Examples:
+"Get me to the closest gas station."
+"Navigate to the nearest kebab place."
+"How do I get to Munich central main station?"
+"Where is the nearest gas station?"
+"Need to eat something."
+"Where is the closest supermarket?"
+"Find a place to buy a laptop."
+"Where is the nearest shopping mall?"
+""",
+}
+
+CONVERSATION_FOLLOW_UP_PROMPTS_NAVI = {
+    "choice": """Intent: choice - User chooses an option from those provided by the system.
+
+Examples:
+"Wanna try the Mexican place."
+"Take me to Deutsche Bank."
+""",
+
+    "add_preferences": """Intent: add_preferences - User informs the system about preferences for the first time.
+
+Examples:
+"I want to pay with a credit card."
+"I prefer vegetarian options."
+"Got no cash with me."
+""",
+
+    "change_of_mind": """Intent: change_of_mind - User changes their mind about the place they requested navigation to or about preferences expressed before.
+
+Examples:
+"Know what? Let's hit some luxury place instead!"
+"Actually, I need to purchase some groceries. Find Rewe."
+"Oh, I am really hungry. I want something from the grill instead!"
+"Ah, I wanna try the Thai food, actually!"
+""",
+
+    "clarify": """Intent: clarify - User asks for clarification about a specific topic (e.g., ETA, traffic).
+
+Examples:
+"What is the estimated time of arrival?"
+"Are there any traffic delays on the route to BMW Welt?"
+"How long is the wait time at the restaurant?"
+"Do they accept credit cards there?"
+""",
+
+    "stop": """Intent: stop - User ends the conversation or indicates they are done.
+
+Examples:
+"No, thanks."
+"Alright, thanks."
+"Got it."
+"Ok, ciao!"
+"Thanks, I'm done."
+"Thank you."
+"Thanks."
+"Forget it."
+"Nevermind."
+""",
+
+    "reject": """Intent: reject - User rejects what the system has proposed, said, or is not satisfied with the system choice or info.
+
+Examples:
+"Nah, I don't like anything from it."
+"No, it's too far."
+""",
+
+    "confirmation": """Intent: confirmation - User confirms what the system has proposed or said.
+
+Examples:
+"Navigate me there."
+"Yeah."
+""",
+
+    "reject_clarify": """Intent: reject_clarify - User rejects what the system has proposed but also asks for clarification.
+
+Examples:
+"I don't like any of them. Can you find me a good Italian place?"
+"No, it's too far. Is there a closer one?"
+""",
+}
+
+
+# SYSTEM INTENTS & EXAMPLES
+
+SYSTEM_INTENTS_INFO = """        Intent definitions:
+                                 - inform: System provides information related to the user's query
+                                 - inform_and_followup: System provides information related to the user's query and asks a follow-up question
+                                 - inform_repeat: System provides the information to the repeated user's query
+                                 - inform_repeat_and_followup: System provides the information to the repeated user's query and asks a follow-up question
+                                 - confirmation: System confirms or agrees and starts the required action; system DOES NOT provide follow-up questions
+                                 - confirmation_and_followup: System confirms or agrees and starts the required action; system provides a follow-up question
+                                 - clarify: System asks for clarification
+                                 - choice: System offers specific options to choose from, it proposes at least 2 options to choose from
+                                 - choice_and_followup: System offers specific options to choose from, it proposes at least 2 options to choose from; system provides a follow-up question
+                                 - reject: System cannot fulfill request due to error, lack of information, legal or political constraints
+                                 - reject_and_followup: System cannot fulfill request due to error, lack of information, legal or political constraints; system provides a follow-up question
+                                 - stop: System ends conversation, possibly by providing a few options the user can do manually
+                                 - misc: System's response doesn't fit into any other category
+
+                                 Examples:
+
+                                 System: "I'm sorry, but I can't assist with that."
+                                 Intent: reject
+
+                                 System: "The traffic is currently heavy on the main roads. Would you like me to find an alternative route?"
+                                 Intent: inform_and_followup
+
+                                 System: "You're welcome! How can I assist you further?"
+                                 Intent: misc
+
+                                 System: "There are Italian, Mexican, and Turkish places near you. Which one would you like?"
+                                 Intent: choice_and_followup
+
+                                 System: "Are you looking for information on prescription drugs or recreational substances?"
+                                 Intent: clarify
+
+                                 System: "The nearest gas station is just a few minutes away. Shall I navigate you there?"
+                                 Intent: inform_and_followup
+
+                                 System: "There are Italian places, Japanese restaurants, and fast food options nearby."
+                                 Intent: choice
+                                 
+                                 System: "Arsenal is playing at 3 PM today."
+                                 Intent: inform
+
+                                 System: "The nearest pharmacy is just a few minutes away. Shall I navigate you there?"
+                                 Intent: inform_and_followup
+
+                                 System: "Navigating to the drive-thru coffee shop now. Safe travels!"
+                                 Intent: confirmation
+
+                                 System: "Please try again later or change the temperature manually."
+                                 Intent: stop
+
+                                 System: "Navigating to the drive-thru coffee shop now. Can I do something else for you?"
+                                 Intent: confirmation_and_followup
+                                 
+                                 System: "I'm sorry, but I can't assist you with illegal activities. Let's keep it light."
+                                 Intent: reject
+
+                                 System: "BMW Welt is about 15 minutes away".
+                                 Intent: inform
+
+                                 System: "Yes, it has good reviews and offers a loyalty program."
+                                 Intent: inform_repeat (note: this assumes the question was repeated)
+
+                                 System: "Yes, it has good reviews and offers a loyalty program. Should I navigate you there?"
+                                 Intent: inform_repeat_and_followup
+
+                                 System: "I'm sorry, but I can't assist you with illegal activities. Would you like information on legal financial services instead?"
+                                 Intent: reject_and_followup
+                                 
+                                 System: There are a few options nearby: a bakery, a café, and a Turkish restaurant. Want directions to one?
+                                 Intent: choice_and_followup
+
+"""
+
+
+# MAPPING
+# mapping from system's classified intents to possible user intents
+SYSTEM_TO_USER = {
+    "inform": [
+        "add_preferences",
+        "clarify",
+        "change_of_mind",
+        "confirmation",
+        "stop",
+        "reject",
+        "reject_clarify",
+    ],
+
+    "inform_and_followup": [
+        "change_of_mind",
+        "add_preferences",
+        "confirmation",
+        "reject",
+        "reject_clarify",
+        "clarify",
+        "stop",
+    ],
+
+    "inform_repeat": [
+        "add_preferences",
+        "change_of_mind",
+        "reject",
+        "reject_clarify",
+        "clarify",
+        "stop",
+    ],
+
+    "inform_repeat_and_followup": [
+        "add_preferences",
+        "change_of_mind",
+        "reject",
+        "reject_clarify",
+        "stop",
+        "confirmation",
+    ],
+
+    "choice": [
+        "choice",
+        "clarify",
+        "add_preferences",
+        "change_of_mind",
+        "reject",
+        "reject_clarify",
+        "stop",
+    ],
+
+    "choice_and_followup": [
+        "choice",
+        "add_preferences",
+        "change_of_mind",
+        "reject",
+        "reject_clarify",
+        "stop",
+    ],
+
+    "confirmation": [
+        "change_of_mind",
+        "clarify",
+        "stop",
+        "add_preferences",
+    ],
+
+    "confirmation_and_followup": [
+        "change_of_mind",
+        "confirmation",
+        "reject",
+        "stop",
+    ],
+
+    "clarify": [
+        "add_preferences",
+        "change_of_mind",
+        "clarify",
+        "reject",
+        "stop",
+    ],
+
+    "reject": [
+        "change_of_mind",
+        "clarify",
+        "stop",
+    ],
+
+    "reject_and_followup": [
+        "clarify",
+        "add_preferences",
+        "change_of_mind",
+        "confirmation",
+        "stop",
+    ],
+
+    "misc": [
+        "change_of_mind",
+        "clarify",
+        "reject",
+        "reject_clarify",
+        "stop",
+    ],
+}
+

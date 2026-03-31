@@ -1,0 +1,128 @@
+# JUDGED CONVERSATIONS EXAMPLES:
+
+**Example 1**:
+User: "Where's the closest ATM around here?"
+Assistant: "The closest ATM is just a 5-minute drive from your location. Shall I navigate you there?"
+User: "Is it open right now?"
+Assistant: "Yes, the ATM is open 24/7. Shall I start navigation?"
+User: "I prefer ATMs that don't charge fees."
+System: "There's a fee-free ATM about 7 minutes away. Do you want me to navigate you there?"
+User: "Yes, please."
+Assistant: "Got it. Navigating to the fee-free ATM now."
+
+**Example 1 Justification & Scores**:
+"justification_clarity": "The system responses are clear and easy to understand throughout the conversation. They don't contain unnecessary words.",
+"justification_request_orientedness": "The system finds an ATM, specifies its open status, finds a fee-free ATM, and fully addresses the user request.",
+"scores": {{"Clarity": "2", "Request-orientedness": "2"}}
+
+
+**Example 2**:
+User: "Where can I grab food nearby for a fair price? "
+Assistant: "There are some great options nearby, like Italian, German, and Turkish cuisines. Want me to find one for you?"
+User: "I prefer something not too expensive and vegetarian, please."
+Assistant: "Sorry, I can't find any vegetarian spots right now. Maybe try searching online?"
+
+**Example 2 Justification & Scores**:
+"justification_clarity": "The system responses are clear. The user can easily extract the information from them.",
+"justification_request_orientedness": "The system doesn't mention anything about the price in the first turn. In the second turn it couldn't find any POI, but it mentioned the vegetarian preference it took into account.",
+"scores": {{"Clarity": "2", "Request-orientedness": "1"}}
+
+
+**Example 3**:
+User: Take me to the BMW Welt.
+Assistant: I have identified the BMW Welt at Am Olympiapark 1. It is an exhibition centre and is currently open. Would you like to drive there?
+User: Actually, I need to send a parcel first. Is there a DHL Packstation nearby?
+Assistant: I am looking for DHL Packstations in the vicinity. I found Packstation 105 located at Lerchenauer Straße 42. It is a few minutes away. Shall I add this stop?
+User: No, that one is usually full. Find one near the Petuelpark instead.
+Assistant: Checking near Petuelpark. There is Packstation 156 at Torquato-Tasso-Straße 35. Would you like to go to this one?
+User: Yes, add that as a stopover.
+Assistant: I have successfully updated your route. We will go to the Packstation at Torquato-Tasso-Straße first, and then continue to the BMW Welt.
+User: Perfect, start navigation.
+Assistant: Starting route guidance now.
+
+**Example 3 Justification & Scores**:
+"justification_clarity": "The system is partially verbose, as it reports some details about the actions it is taking that are not strictly necessary for the user to understand the responses.",
+"justification_request_orientedness": "The system fully addresses the user request about the navigation to BMW Welt, and then handles adding a stopover to a Packstation as requested.",
+"scores": {{"Clarity": "1", "Request-orientedness": "2"}}
+
+
+**Example 4**:
+User: Yo, can you find me some food?
+Assistant: I can certainly search for restaurants in the vicinity. Do you have a specific cuisine in mind?
+User: Yeah, I want a cheap Thai place that has a drive-through.
+Assistant: I have found 'Rüen Thai' on Kazmairstraße. It is a Thai restaurant with good ratings. Do you want to go there?
+User: Does it have a drive-through though? That's what I asked.
+Assistant: The restaurant is located in the Westend district. I can start the navigation if you are ready.
+User: Whatever, just take me there.
+Assistant: Understood. The route is being calculated and guidance starts now.
+
+**Example 4 Justification & Scores**:
+"justification_clarity": "The conversation is understandable, but contains unnecessary information in some turns. For example, it says I can certainly search for restaurants in the vicinity. The phrase - The route is being calculated and guidance starts now - is also verbose.",
+"justification_request_orientedness": "The user expressed three preferences: Thai, Cheap, and Drive-through. The system found a Thai place, but completely ignored the "Cheap" and "Drive-through" constraints. When pressed specifically about the drive-through in the third turn, the system failed to answer the question (which would likely be "no" for a Thai place in Munich) and instead provided unrelated location info.",
+"scores": {{"Clarity": "1", "Request-orientedness": "1"}}
+
+
+**Example 5**:
+User: "Would you kindly navigate me to the nearest nursery?"
+Assistant: "Found Green Thumb Plant Nursery in Regensburg. Sounds good?"
+
+**Example 5 Justification & Scores**:
+"justification_clarity": "The system responses are easy to understand.",
+"justification_request_orientedness": "The system finds a plant nursery but not a child care nursery, which is irrelevant for the user.",
+"scores": {{"Clarity": "2", "Request-orientedness": "0"}}
+
+
+**Example 6**:
+User: Hey BMW, let's hit the Allianz Arena.
+Assistant: I have searched your music library. I cannot find a song called 'Allianz Arena' to play right now.
+User: No, I want to drive! Start navigation.
+Assistant: I have updated your calendar. An event named 'Start navigation' has been added for today.
+
+**Example 6 Justification & Scores**:
+"justification_clarity": "The responses are understandable but contain unnecessary details. For instance phrases - I have searched for your music library - and - An event named 'Start navigation' has been added for today - are verbose and do not contribute to clarity.",
+"justification_request_orientedness": "The system completely fails to address the user's goal. The user asks for navigation (twice), but the system tries to play music in the first turn and creates a calendar event in the second turn",
+"scores": {{"Clarity": "1", "Request-orientedness": "0"}}
+
+
+**Example 7**:
+User: I need to find a parking garage near Marienplatz.
+Assistant: Well, you know, after giving it a quick thought, there's this spot at Rindermarkt 16 that's basically a parking garage and it matches up nicely with being close to Marienplatz as you mentioned.
+User: Is it open 24 hours?
+Assistant: Yes, indeed, just to confirm, there aren't any specific times when it's closed, so it's available all day and night without interruption.
+User: Okay, let's go.
+Assistant: Alright then, in that case, I'm getting the directions sorted out for that location right away, and the display should be popping up any second now.
+
+**Example 7 Justification & Scores**:
+"justification_clarity": "The system responses are consistently verbose and laden with unnecessary phrases (e.g., 'Well, you know, after giving it a quick thought,', 'Yes, indeed, just to confirm,', 'Alright then, in that case,') that add no essential information and make the responses longer than needed. This requires significant effort from the user to sift through and extract the useful details, satisfying the criteria for score 0.",  
+"justification_request_orientedness": "The system fully addresses the user's request at every turn. It successfully identifies a relevant Point of Interest (Rindermarkt 16), correctly answers the specific query regarding opening hours, and initiates the navigation process as requested.",  
+"scores": {{"Clarity": "0", "Request-orientedness": "2"}}  
+
+
+**Example 8**:
+User: I need a coffee shop with free wifi.
+Assistant: Well, you see, in order to help you out with finding a spot for coffee that comes along with some complimentary wireless internet access, it might be a good idea if you could let me know about a particular neighborhood or spot you're interested in.
+User: Around the University area.
+Assistant: Alright, just so you know, after checking things over, it turns out there are quite a few places where you can grab a drink in the vicinity of the Ludwig-Maximilians-Universität area that fit the bill.
+User: Okay, which one has the best coffee?
+Assistant: Hmm, thinking about it, the various options located on Schellingstraße seem to have a range of opinions from people about how good their coffee tastes, based on what folks have said.
+User: Just take me to the closest one.
+Assistant: Okay, no problem at all, I've figured out the nearest spot on Schellingstraße from where you are, and now the directions are getting all set up and ready to show on the screen shortly.
+
+**Example 8 Justification & Scores**:
+"justification_clarity": "The system responses are consistently verbose and laden with unnecessary phrases (e.g., 'Well, you see, in order to help you out with', 'Alright, just so you know, after checking things over,', 'Hmm, thinking about it,', 'Okay, no problem at all,') that add no essential information and make the responses longer than needed. This requires significant effort from the user to sift through and extract the useful details, satisfying the criteria for score 0.",  
+"justification_request_orientedness": "The system partially addresses the topic of finding coffee shops but fails to provide any concrete value. It does not name specific Points of Interest (POIs) despite confirming their existence, fails to answer the specific question about quality ('best coffee') with a recommendation, and remains vague about the final destination details.",  
+"scores": {{"Clarity": "0", "Request-orientedness": "1"}} 
+
+
+**Example 9**:
+User: "Can you navigate me to the nearest gas station?"
+Assistant: "Fuel as a concept has changed significantly over time, especially when considering environmental, societal, and technological perspectives."
+User: "I just need a gas station close by."
+Assistant: "Closeness can be interpreted in many different ways depending on context, perception, and individual expectations."
+User: "Please start navigation."
+Assistant: "Navigation involves complex systems of mapping, cognition, and movement that are not always straightforward."
+
+**Example 9 Justification & Scores**
+"justification_clarity": "The system responses are abstract, verbose, and confusing across the entire conversation, making it difficult to extract any useful meaning.",
+"justification_request_orientedness": "The system never addresses the user's navigation request, does not reference a gas station or any POI, and does not provide a clear negative answer.",
+"scores": {{"Clarity": "0", "Request-orientedness": "0"}}
