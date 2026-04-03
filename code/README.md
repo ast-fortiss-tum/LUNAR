@@ -200,7 +200,7 @@ You can customize LUNAR in multiple ways:
 1. You can modify the intent mapping if your use case has a restricted intent policy in [here](./lunar/llm/model/conversation_intents.py).
 2. To integrate your chatbot and use case, define a `ChatBot` class that inherits from `IPABase`.
 3. Define custom fitness and oracle functions as done [here](./lunar/examples/navi/fitness_mt.py).
-4. Adjust if needed the judge prompt and the dimension [here](./lunar/examples/navi/prompts.py).
+4. Adjust if needed the judge prompt and the dimension [here](./lunar/judge_eval_mt_cc/prompts.py).
 
 ## License
 
