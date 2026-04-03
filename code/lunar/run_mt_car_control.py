@@ -1,12 +1,16 @@
+from multiprocessing import context
 import os
+os.environ["WANDB__SERVICE"] = "false"
+
 import argparse
 from datetime import datetime
 
 import pymoo
 import wandb
+
 import weave
 
-from examples.navi.fitness_mt import NaviFitnessConversationEffectiveness, NaviFitnessConversationEfficiency, NaviFitnessConversationValidationDimensions
+from examples.car_control.fitness_mt import CCFitnessConversationEffectiveness, CCFitnessConversationEfficiency, CCFitnessConversationValidationDimensions
 from llm.eval.critical import CriticalByFitnessThreshold, CriticalMerged
 from llm.eval.fitness import FitnessMerged
 from llm.llm_output import ExtendedEncoder
@@ -39,12 +43,11 @@ from llm.operators.conversation_mutator_discrete import ConversationMutationDisc
 from llm.operators.conversation_crossover_discrete import ConversationCrossoverDiscrete
 from llm.operators.conversation_duplicates import ConversationDuplicateEliminationLocal, ConversationDuplicateEliminationVars
 from llm.operators.conversation_repair import ConversationRepairConversationGenerator, NoConversationRepair
-from examples.navi.navi_conversation_generator import NaviConversationGenerator
+from examples.car_control.cc_conversation_generator import CCConversationGenerator
 from llm.features import FeatureHandler
 from llm.model.search_configuration import MultiTurnSearchConfiguration, MultiTurnSearchOperators
 from llm.sut.ipa import IPA
-from llm.sut.ipa_industry import IndustryIPA
-from llm.sut.ipa_yelp import IPA_YELP
+from llm.sut.ipa_yelp_cc import IPA_YELP
 from llm.sut.ipa_los import IPA_LOS
 from llm.llms import LLMType
 from mt_navi_runs_utils import save_results_to_json
@@ -61,13 +64,13 @@ parser.add_argument("--algorithm", type=str, choices=["rs", "nsga2", "nsga2d"], 
 parser.add_argument("--n", type=int, default=6, help="Population size.")
 parser.add_argument("--i", type=int, default=6, help="Number of generations.")
 parser.add_argument("--archive_threshold", type=float, default=0.15, help="Threshold for novelty archive (NSGA-II-D).")
-parser.add_argument("--sut", type=str, choices=["industry", "openai", "openai_los", "ipa_yelp"], default="industry", help="System under test.")
+parser.add_argument("--sut", type=str, choices=["industry", "openai", "openai_los", "ipa_yelp"], default="ipa_yelp", help="System under test.")
 parser.add_argument("--no_wandb", action="store_true", help="Disable Weights & Biases logging.")
 parser.add_argument("--wandb_project", type=str, default="MultiTurnTestDiscrete", help="Weights & Biases project name.")
 parser.add_argument(
     "--features_config",
     type=str,
-    default="configs/features_simple_judge_navi.json",
+    default="configs/features_simple_judge_cc.json",
     help="Path to features configuration JSON for NaviUtteranceGenerator / FeatureHandler.",
 )
 parser.add_argument("--weight_clarity", type=float, default=0.5, help="Weight for clarity dimension.")
@@ -96,11 +99,17 @@ parser.add_argument(
     help="Store detailed turn-level results in a JSON file.",
 )
 parser.add_argument(
+    "--llm_ipa",
+    type=str,
+    #default="DeepSeek-V3-0324",
+    default="gpt-5-chat",
+    help="LLM model for SUT",
+)
+parser.add_argument(
     "--llm_intent_classifier",
     type=str,
     #default="DeepSeek-V3-0324",
-    #default="DeepSeek-R1-0528",
-    default="gpt-4o-mini",
+    default="gpt-4o",
     help="LLM model for system intent classification during conversation (overrides LLM_IPA from config).",
 )
 parser.add_argument(
@@ -115,16 +124,32 @@ parser.add_argument(
     default="gpt-5-mini",
     help="LLM model for utterance generation (overrides LLM_TYPE from config).",
 )
+parser.add_argument(
+    "--save_folder",
+    type=str,
+    default=RESULTS_FOLDER,
+    help="Path where to store results"
+)
 
 args = parser.parse_args()
 
 import llm.config as llm_config
+if args.llm_ipa:
+    llm_config.LLM_IPA = args.llm_ipa
+    os.environ["LLM_IPA"] = args.llm_ipa
+    print(f"Set LLM_IPA to {args.llm_ipa}")
 if args.llm_intent_classifier:
-    llm_config.LLM_IPA = args.llm_intent_classifier
+    llm_config.LLM_CLASSIFIER = args.llm_intent_classifier
+    os.environ["LLM_CLASSIFIER"] = args.llm_intent_classifier
+    print(f"Set LLM_CLASSIFIER to {args.llm_intent_classifier}")
 if args.llm_judge:
     llm_config.LLM_VALIDATOR = args.llm_judge
+    os.environ["LLM_VALIDATOR"] = args.llm_judge
+    print(f"Set LLM_VALIDATOR to {args.llm_judge}")
 if args.llm_generator:
-    llm_config.LLM_TYPE = args.llm_generator
+    llm_config.LLM_GENERATOR = args.llm_generator
+    os.environ["LLM_GENERATOR"] = args.llm_generator
+    print(f"Set LLM_GENERATOR to {args.llm_generator}")
 
 # Logging/setup
 os.chmod(os.getcwd(), 0o777)
@@ -146,6 +171,7 @@ def create_problem_name(args, config) -> str:
     problem_name = (
         f"{args.algorithm.upper()}"
         + f"_{args.sut}"
+        + f"_{args.llm_ipa}"
         + f"_{config.population_size}n"
         + (f"_{config.n_generations}i" if config.n_generations is not None else "")
         + (
@@ -154,12 +180,10 @@ def create_problem_name(args, config) -> str:
             else ""
         )
         + f"_{args.seed}seed"
-        + "_Discrete"
-        + f"_gen-{args.llm_generator}"
-        + f"_judge-{args.llm_judge}"
+        # + f"_gen-{args.llm_generator}"
+        # + f"_judge-{args.llm_judge}"
     )
     return problem_name
-
 
 # Configure Discrete Operators
 operators = MultiTurnSearchOperators(
@@ -188,12 +212,10 @@ config.n_generations = args.i
 config.archive_threshold = args.archive_threshold
 config.maximal_execution_time = None if (args.max_time is None or str(args.max_time).lower() in ("none", "")) else args.max_time
 config.n_repopulate_max = 0.2
-config.results_folder = RESULTS_FOLDER
+config.results_folder = args.save_folder
 
 #  SUT 
-if args.sut == "industry":
-    simulate_function = IndustryIPA.simulate_conversation
-elif args.sut == "openai":
+if args.sut == "openai":
     simulate_function = IPA.simulate_conversation
 elif args.sut == "openai_los":
     simulate_function = IPA_LOS.simulate_conversation
@@ -204,9 +226,9 @@ else:
 
 
 fitness = FitnessMerged([
-    NaviFitnessConversationValidationDimensions(weights=[args.weight_clarity, args.weight_request_orientedness],),
-    NaviFitnessConversationEfficiency(),
-    NaviFitnessConversationEffectiveness(),
+    CCFitnessConversationValidationDimensions(weights=[args.weight_clarity, args.weight_request_orientedness],),
+    CCFitnessConversationEfficiency(),
+    CCFitnessConversationEffectiveness(),
 ])
 
 critical = CriticalMerged(
@@ -237,17 +259,15 @@ problem = QAProblem(
             "time": "09:00:00",
         },
         "person": {"gender": "male", "age": 51},
+    } if args.sut != "ipa_yelp" else {
+        "location": {
+            "position": [39.9555, -75.1999],
+            "address": "38-98 S 39th St, Philadelphia, PA, USA",
+            "data": "2025-03-19T0",
+            "time": "09:00:00",
+        },
+        "person": {"gender": "female", "age": 33},
     },
-    # # NOTE: this is for ipa_yelp
-    # context={
-    #     "location": {
-    #         "position": [39.9555, -75.1999],
-    #         "address": "38-98 S 39th St, Philadelphia, PA, USA",
-    #         "data": "2025-03-19T0",
-    #         "time": "09:00:00",
-    #     },
-    #     "person": {"gender": "female", "age": 33},
-    # },
     seed=args.seed,
     min_turns=args.min_turns,
     max_turns=args.max_turns,
@@ -255,11 +275,11 @@ problem = QAProblem(
 )
 
 problem.feature_handler = feature_handler
-problem.conversation_generator = NaviConversationGenerator(feature_handler=feature_handler)
+problem.conversation_generator = CCConversationGenerator(feature_handler=feature_handler)
 
 problem.problem_name = create_problem_name(args, config)
 
-tags = [f"{k}:{v}" for k, v in vars(args).items() if k not in ["features_config", "save_folder"]]
+tags = [f"{k}:{v}" for k, v in vars(args).items() if k not in ("features_config", "save_folder")]
 
 if not args.no_wandb:
     weave.init(args.wandb_project)
@@ -291,12 +311,11 @@ else:
 
 res = optimizer.run()
 
+if args.store_turns_details:
+    save_results_to_json(res, args, problem, output_dir=optimizer.save_folder)
 res.write_results(
     results_folder=optimizer.save_folder,
     params=optimizer.parameters,
     search_config=config
 )
 log.info("====== Algorithm search time: " + str("%.2f" % res.exec_time) + " sec")
-
-if args.store_turns_details:
-    save_results_to_json(res, args, problem, output_dir=optimizer.save_folder)

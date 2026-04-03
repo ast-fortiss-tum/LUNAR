@@ -4,16 +4,8 @@ import sys
 from pathlib import Path
 import site
 
-for name in ["opensbt-llm", "OpenSBT-LLM"]:
-    base = Path("..") / name
-    if base.exists():
-        sys.path.insert(0, str(base))
-        site = base / "venv/lib/python3.11/site-packages"
-        if site.exists():
-            sys.path.insert(0, str(site))
-        break
-
-sys.path.insert(0,"/home/q680122/.pyenv/versions/3.11.8/envs/myvenv/lib/python3.11/site-packages/")
+sys.path.insert(0, "../lunar/venv/lib/python3.11/site-packages")
+sys.path.insert(0, "../lunar/")
 
 from user_sim.venue_match_extraction import VenueMatchExtraction
 
@@ -162,7 +154,6 @@ class UserGeneration:
 
     def repetition_track(self, response, reps=3):
         self.my_context.reset_context()
-        logger.info(f"Context list: {self.my_context.context_list}")
 
         if nlp_processor(response, self.chatbot.fallback, 0.6):
             self.repeat_count += 1

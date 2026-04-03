@@ -36,9 +36,9 @@ user:
     - IMPORTANT- when applying change of mind try to use related or same component
 
   goals:
-    - "you want to change the car component {{car component}}. You are not explicit ind saying what you want to do with it. You will refine it later."
+    - "you want to change the car component {{car_component}}. You are not explicit ind saying what you want to do with it. You will refine it later."
     - "the component of the state change is located in a specific position"
-    - "you want to change the state of the {{car component}} to a state."
+    - "you want to change the state of the {{car_component}} to a state."
     - "you want to know which functions you can change in the car via voice input"
     - "you want to know the possible state of car component that is controllable via voice"
     - "you want to know the state of a car component that is controllable"
@@ -54,6 +54,7 @@ user:
           - climate
           - fan
           - seat_heating
+          - windows
 
 chatbot:
   is_starter: False

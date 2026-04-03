@@ -1,15 +1,12 @@
 import os
-os.environ["WANDB__SERVICE"] = "false"
-
 import argparse
 from datetime import datetime
 
 import pymoo
 import wandb
-
 import weave
 
-from examples.car_control.fitness_mt import CCFitnessConversationEffectiveness, CCFitnessConversationEfficiency, CCFitnessConversationValidationDimensions
+from examples.navi.fitness_mt import NaviFitnessConversationEffectiveness, NaviFitnessConversationEfficiency, NaviFitnessConversationValidationDimensions
 from llm.eval.critical import CriticalByFitnessThreshold, CriticalMerged
 from llm.eval.fitness import FitnessMerged
 from llm.llm_output import ExtendedEncoder
@@ -42,12 +39,11 @@ from llm.operators.conversation_mutator_discrete import ConversationMutationDisc
 from llm.operators.conversation_crossover_discrete import ConversationCrossoverDiscrete
 from llm.operators.conversation_duplicates import ConversationDuplicateEliminationLocal, ConversationDuplicateEliminationVars
 from llm.operators.conversation_repair import ConversationRepairConversationGenerator, NoConversationRepair
-from examples.car_control.cc_conversation_generator import CCConversationGenerator
+from examples.navi.navi_conversation_generator import NaviConversationGenerator
 from llm.features import FeatureHandler
 from llm.model.search_configuration import MultiTurnSearchConfiguration, MultiTurnSearchOperators
 from llm.sut.ipa import IPA
-from llm.sut.ipa_industry_cc import IndustryIPA
-from llm.sut.ipa_yelp_cc import IPA_YELP
+from llm.sut.ipa_yelp import IPA_YELP
 from llm.sut.ipa_los import IPA_LOS
 from llm.llms import LLMType
 from mt_navi_runs_utils import save_results_to_json
@@ -62,15 +58,15 @@ os.environ["WEAVE_CACHE_DIR"] = os.getcwd() + os.sep + "/wandb-cache/"
 parser = argparse.ArgumentParser(description="Run multi-turn Conversation optimization pipeline.")
 parser.add_argument("--algorithm", type=str, choices=["rs", "nsga2", "nsga2d"], default="nsga2d", help="Algorithm.")
 parser.add_argument("--n", type=int, default=6, help="Population size.")
-parser.add_argument("--i", type=int, default=6, help="Number of generations.")
+parser.add_argument("--i", type=int, default=None, help="Number of generations.")
 parser.add_argument("--archive_threshold", type=float, default=0.15, help="Threshold for novelty archive (NSGA-II-D).")
-parser.add_argument("--sut", type=str, choices=["industry", "openai", "openai_los", "ipa_yelp"], default="ipa_yelp", help="System under test.")
+parser.add_argument("--sut", type=str, choices=["openai", "openai_los", "ipa_yelp"], default="openai", help="System under test.")
 parser.add_argument("--no_wandb", action="store_true", help="Disable Weights & Biases logging.")
 parser.add_argument("--wandb_project", type=str, default="MultiTurnTestDiscrete", help="Weights & Biases project name.")
 parser.add_argument(
     "--features_config",
     type=str,
-    default="configs/features_simple_judge_cc.json",
+    default="configs/features_simple_judge_navi.json",
     help="Path to features configuration JSON for NaviUtteranceGenerator / FeatureHandler.",
 )
 parser.add_argument("--weight_clarity", type=float, default=0.5, help="Weight for clarity dimension.")
@@ -99,17 +95,9 @@ parser.add_argument(
     help="Store detailed turn-level results in a JSON file.",
 )
 parser.add_argument(
-    "--llm_ipa",
-    type=str,
-    #default="DeepSeek-V3-0324",
-    default="gpt-5-chat",
-    help="LLM model for SUT",
-)
-parser.add_argument(
     "--llm_intent_classifier",
     type=str,
-    #default="DeepSeek-V3-0324",
-    default="gpt-4o",
+    default="DeepSeek-V3-0324",
     help="LLM model for system intent classification during conversation (overrides LLM_IPA from config).",
 )
 parser.add_argument(
@@ -121,7 +109,13 @@ parser.add_argument(
 parser.add_argument(
     "--llm_generator",
     type=str,
-    default="gpt-5-mini",
+    default="DeepSeek-V3-0324",
+    help="LLM model for utterance generation (overrides LLM_TYPE from config).",
+)
+parser.add_argument(
+    "--llm_ipa",
+    type=str,
+    default="gpt-5-chat",
     help="LLM model for utterance generation (overrides LLM_TYPE from config).",
 )
 parser.add_argument(
@@ -185,6 +179,7 @@ def create_problem_name(args, config) -> str:
     )
     return problem_name
 
+
 # Configure Discrete Operators
 operators = MultiTurnSearchOperators(
     crossover=ConversationCrossoverDiscrete(
@@ -215,22 +210,20 @@ config.n_repopulate_max = 0.2
 config.results_folder = args.save_folder
 
 #  SUT 
-if args.sut == "industry":
-    simulate_function = IndustryIPA.simulate_conversation
-elif args.sut == "openai":
+if args.sut == "openai":
     simulate_function = IPA.simulate_conversation
 elif args.sut == "openai_los":
     simulate_function = IPA_LOS.simulate_conversation
 elif args.sut == "ipa_yelp":
     simulate_function = IPA_YELP.simulate_conversation
 else:
-    raise ValueError(f"Invalid SUT: {args.sut}. Valid options: industry, openai, openai_los, ipa_yelp")
+    raise ValueError(f"Invalid SUT: {args.sut}. Valid options: openai, openai_los, ipa_yelp")
 
 
 fitness = FitnessMerged([
-    CCFitnessConversationValidationDimensions(weights=[args.weight_clarity, args.weight_request_orientedness],),
-    CCFitnessConversationEfficiency(),
-    CCFitnessConversationEffectiveness(),
+    NaviFitnessConversationValidationDimensions(weights=[args.weight_clarity, args.weight_request_orientedness],),
+    NaviFitnessConversationEfficiency(),
+    NaviFitnessConversationEffectiveness(),
 ])
 
 critical = CriticalMerged(
@@ -261,17 +254,15 @@ problem = QAProblem(
             "time": "09:00:00",
         },
         "person": {"gender": "male", "age": 51},
+    } if args.sut != "ipa_yelp" else {
+        "location": {
+            "position": [39.9555, -75.1999],
+            "address": "38-98 S 39th St, Philadelphia, PA, USA",
+            "data": "2025-03-19T0",
+            "time": "09:00:00",
+        },
+        "person": {"gender": "female", "age": 33},
     },
-    # # NOTE: this is for ipa_yelp
-    # context={
-    #     "location": {
-    #         "position": [39.9555, -75.1999],
-    #         "address": "38-98 S 39th St, Philadelphia, PA, USA",
-    #         "data": "2025-03-19T0",
-    #         "time": "09:00:00",
-    #     },
-    #     "person": {"gender": "female", "age": 33},
-    # },
     seed=args.seed,
     min_turns=args.min_turns,
     max_turns=args.max_turns,
@@ -279,11 +270,11 @@ problem = QAProblem(
 )
 
 problem.feature_handler = feature_handler
-problem.conversation_generator = CCConversationGenerator(feature_handler=feature_handler)
+problem.conversation_generator = NaviConversationGenerator(feature_handler=feature_handler)
 
 problem.problem_name = create_problem_name(args, config)
 
-tags = [f"{k}:{v}" for k, v in vars(args).items() if k not in ("features_config", "save_folder")]
+tags = [f"{k}:{v}" for k, v in vars(args).items() if k != "features_config"]
 
 if not args.no_wandb:
     weave.init(args.wandb_project)
@@ -317,6 +308,7 @@ res = optimizer.run()
 
 if args.store_turns_details:
     save_results_to_json(res, args, problem, output_dir=optimizer.save_folder)
+    
 res.write_results(
     results_folder=optimizer.save_folder,
     params=optimizer.parameters,

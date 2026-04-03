@@ -56,7 +56,7 @@ Examples:
 
 Examples:
 "What is the estimated time of arrival?"
-"Are there any traffic delays on the route to BMW Welt?"
+"Are there any traffic delays on the route to IKEA Welt?"
 "How long is the wait time at the restaurant?"
 "Do they accept credit cards there?"
 """,

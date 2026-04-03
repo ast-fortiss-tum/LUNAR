@@ -1,0 +1,11 @@
+data/*
+.env
+key.json
+venv/
+# Ignore Python cache directories and files
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+key.json

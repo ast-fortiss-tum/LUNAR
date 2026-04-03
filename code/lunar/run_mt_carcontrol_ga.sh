@@ -6,19 +6,19 @@ do
   TIMESTAMP=$(date +"%d-%m-%Y_%H-%M-%S")
   RESULTS_DIR="results/${TIMESTAMP}"
   RUN_DIR="${RESULTS_DIR}/seed_${SEED}_${TIMESTAMP}/"
-  
+
   mkdir -p "${RUN_DIR}"
 
   echo "Running seed ${SEED}, output -> ${RUN_DIR}"
 
-  PYTHONUNBUFFERED=1 LLM_IPA="gpt-5-chat" python run_mt_car_control_discrete.py \
-      --algorithm rs \
-      --n 10000 \
+  PYTHONUNBUFFERED=1 LLM_IPA="gpt-5-chat" python run_mt_car_control.py \
+      --algorithm nsga2 \
+      --n 15 \
       --sut ipa_yelp \
       --llm_ipa gpt-4o \
-      --llm_intent_classifier DeepSeek-V3-0324 \
+      --llm_intent_classifier DeepSeek-V3-0324  \
       --llm_judge gpt-5-mini \
-      --llm_generator DeepSeek-V3-0324 \
+      --llm_generator DeepSeek-V3-0324  \
       --features_config configs/features_simple_judge_cc.json \
       --max_time "03:00:00" \
       --wandb_project "CarControlYELP" \

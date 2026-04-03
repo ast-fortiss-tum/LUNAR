@@ -59,7 +59,7 @@ class OpenAIClient:
              temperature=0, 
              system_message=None, 
              context=None):
-        
+
         if system_message is None:
             raise ValueError("System message must be provided")
 

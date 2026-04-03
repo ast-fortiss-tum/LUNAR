@@ -11,9 +11,7 @@ LUNAR is an automated testing framework for benchmarking multi-turn conversation
 
 - [Overview](#overview)
 - [Approach](#approach)
-- [Installation](#installation)
 - [Replication](#Replication)
-- [Customization](#customization)
 - [Results](#results)
 - [Supplementary Material](#supplementary-material)
 
@@ -42,7 +40,8 @@ This combination allows LUNAR to explore the complex test space systems to ident
 
 ## Replication
 
-The code with installation and replication instructions is provided [here](code).
+The code with installation and replication instructions is provided [here](code/).
+
 ## Results
 
 The metrics results and shared data can be found [here](results).

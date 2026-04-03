@@ -108,7 +108,7 @@ class IPABase(Simulator):
         do_visualize: bool = False,
         temperature: float = 0,
         context: object = None,
-        config_path: str = "configs/features_simple_judge_industry.json",
+        config_path: str = "configs/features_simple_judge_navi.json",
         max_retries: int = 3,
         min_turns: int = 2,
         max_turns: int = 5,

@@ -41,6 +41,7 @@ user:
           - hotel
           - cinema
           - gas_station
+          - hospital
     - payment_method:
         function: random(1)
         type: string

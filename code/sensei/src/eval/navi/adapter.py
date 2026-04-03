@@ -10,10 +10,9 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from user_sim.data_extraction import DataExtraction
 from user_sim.utils.config import errors
 
-# You already do this in your file; leaving as-is would also work
 import sys
-sys.path.insert(0, "../opensbt-llm/venv/lib/python3.11/site-packages")
-sys.path.insert(0, "../opensbt-llm/")
+sys.path.insert(0, "../lunar/venv/lib/python3.11/site-packages")
+sys.path.insert(0, "../lunar/")
 
 from llm.model.mt_simout import MultiTurnSimulationOutput
 from llm.model.models import Conversation as LLMConversation

@@ -4,6 +4,9 @@ import site
 
 # import here the lunar project and its dependencies as we are using its llm calling interface and
 # cost tracking
+import sys
+sys.path.insert(0, "../lunar/venv/lib/python3.11/site-packages")
+sys.path.insert(0, "../lunar/")
 
 from importlib.resources import path
 import time
@@ -22,16 +25,13 @@ import pandas as pd
 import yaml
 from colorama import Fore, Style
 from technologies.chatbot_connectors import (
-    Chatbot, ChatbotConvNavi, ChatbotRasa, ChatbotTaskyto, ChatbotAdaUam, ChatbotMillionBot,
-    ChatbotLolaUMU, ChatbotServiceform, KukiChatbot, JulieChatbot, ChatbotCatalinaRivas, ChatbotSaicMalaga,
-    ChatbotGenion, ChatbotIndustry
+    Chatbot, ChatbotConvNavi
 )
 from user_sim.data_extraction import DataExtraction
 from user_sim.role_structure import *
 from user_sim.user_simulator import UserGeneration
 from user_sim.utils.show_logs import *
 from user_sim.utils.utilities import *
-from llm.llms import ModelStatistics
 from eval.navi.adapter import convert_to_simout, evaluate_simout, save_simout, write_token_usage
 
 
@@ -336,19 +336,7 @@ def parse_profiles(user_path):
 def build_chatbot(technology, chatbot) -> Chatbot:
     default = Chatbot
     chatbot_builder = {
-        'industry' : ChatbotIndustry,
         'convnavi': ChatbotConvNavi,
-        'rasa': ChatbotRasa,
-        'taskyto': ChatbotTaskyto,
-        'ada-uam': ChatbotAdaUam,
-        'millionbot': ChatbotMillionBot,
-        'lola': ChatbotLolaUMU,
-        'rivas_catalina': ChatbotCatalinaRivas,
-        'saic_malaga': ChatbotSaicMalaga,
-        'serviceform': ChatbotServiceform,
-        'kuki': KukiChatbot,
-        'julie': JulieChatbot,
-        'genion': ChatbotGenion
     }
     if technology in chatbot_builder:
         return chatbot_builder[technology](chatbot)

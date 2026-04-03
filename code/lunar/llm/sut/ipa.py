@@ -151,7 +151,7 @@ class IPA(IPABase):
             specific_user_id=user_id,
             max_retries=max_retries,
             system_message=effective_system_message,
-            context=context,
+            context=None,  # context is already included in the system message
         )
 
         sys_answer_text = response_obj.get("data", {}).get("result", "System Error")
@@ -181,10 +181,11 @@ class IPA(IPABase):
         do_visualize: bool = False,
         temperature: float = 0,
         context: object = None,
-        config_path: str = "configs/features_simple_judge_industry.json",
+        config_path: str = "configs/features_simple_judge_navi.json",
         max_retries: int = 3,
         min_turns: int = 2,
         max_turns: int = 5,
+        max_repeats: int = 2,
     ) -> List[MultiTurnSimulationOutput]:
 
         feature_handler = FeatureHandler.from_json(config_path)

@@ -11,17 +11,16 @@ do
 
   echo "Running seed ${SEED}, output -> ${RUN_DIR}"
 
-  PYTHONUNBUFFERED=1 LLM_IPA="gpt-5-chat" python run_mt_car_control_discrete.py \
+  PYTHONUNBUFFERED=1 LLM_IPA="gpt-5-chat" python run_mt_navi.py \
       --algorithm rs \
       --n 15 \
-      --sut ipa_yelp \
+      --sut openai \
       --llm_ipa gpt-5-chat \
       --llm_intent_classifier DeepSeek-V3-0324 \
       --llm_judge gpt-5-mini \
       --llm_generator DeepSeek-V3-0324 \
       --features_config configs/features_simple_judge_cc.json \
       --max_time "00:05:00" \
-      --wandb_project "TestCarControlYELP" \
       --store_turns_details \
       --seed ${SEED} \
       --weight_clarity 0.35 \
@@ -30,5 +29,6 @@ do
       --th_efficiency 0.65 \
       --th_effectiveness 0.75 \
       --save_folder "${RUN_DIR}" \
+      --no_wandb
        2>&1 | tee "${RUN_DIR}/run.log"
 done

@@ -3,8 +3,8 @@ import json
 import random
 import time
 import numpy as np
-from judge_eval.prompts import PROMPT_EVALUATE_REQUEST_RESPONSE_DIMENSIONS_CARCONTROL
-from judge_eval.prompts import JUDGE_PROMPT_CONSTRAINTS_CARCONTROL
+from judge_eval.prompts import PROMPT_EVALUATE_REQUEST_RESPONSE_DIMENSIONS
+from judge_eval.prompts import JUDGE_PROMPT_CONSTRAINTS_NAVI
 from llm.config import DEBUG
 from llm.llms import LLMType, pass_llm
 from json_repair import repair_json
@@ -25,7 +25,7 @@ def llm_validator_question_answer(
     answers = []
     justifications = []
 
-    prompt_eval = PROMPT_EVALUATE_REQUEST_RESPONSE_DIMENSIONS_CARCONTROL.format(question, answer)
+    prompt_eval = PROMPT_EVALUATE_REQUEST_RESPONSE_DIMENSIONS.format(question, answer)
     
     # print("prompt_eval:", prompt_eval)
     global_attempts = 0
@@ -92,7 +92,7 @@ def llm_validator_conversation(
         n=1,
         llm_type=None,
         aggregator="mean",
-        prompt_template=JUDGE_PROMPT_CONSTRAINTS_CARCONTROL
+        prompt_template=JUDGE_PROMPT_CONSTRAINTS_NAVI
 ):
     if llm_type is None:
         from llm.config import LLM_VALIDATOR

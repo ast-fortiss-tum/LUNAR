@@ -6,16 +6,15 @@ from user_sim.utils.config import errors
 import logging
 import os
 from dotenv import load_dotenv
-from llm.sut.ipa_industry import IndustryIPA
 
 load_dotenv()
 
-INDUSTRY_ADDRESS = os.getenv("INDUSTRY_ADDRESS", "http://localhost:8500")
-INDUSTRY_API_KEY = os.getenv("INDUSTRY_API_KEY")
+# INDUSTRY_ADDRESS = os.getenv("INDUSTRY_ADDRESS", "http://localhost:8500")
+# INDUSTRY_API_KEY = os.getenv("INDUSTRY_API_KEY")
 
-logger = logging.getLogger('Info Logger')
+# logger = logging.getLogger('Info Logger')
 
-from llm.sut.ipa_industry import IndustryIPA
+# from llm.sut.ipa_industry import IndustryIPA
 
 ###################################################
 # THE CONNECTORS NEED HEAVY REFACTORING TO JUST
@@ -80,76 +79,76 @@ from typing import Any, Dict, Optional
 
 import requests
 
-class ChatbotIndustry:
-    global_user_counter = 0  # replicate IndustryIPA static counter
+# class ChatbotIndustry:
+#     global_user_counter = 0  # replicate IndustryIPA static counter
 
-    def __init__(self, url: Optional[str] = None, api_key: Optional[str] = None):
-        print("url provided:", url)
-        self.url = url or INDUSTRY_ADDRESS
-        self.api_key = api_key if api_key is not None else INDUSTRY_API_KEY
-        self.logger = logging.getLogger('my_app_logger')
+#     def __init__(self, url: Optional[str] = None, api_key: Optional[str] = None):
+#         print("url provided:", url)
+#         self.url = url or INDUSTRY_ADDRESS
+#         self.api_key = api_key if api_key is not None else INDUSTRY_API_KEY
+#         self.logger = logging.getLogger('my_app_logger')
 
-    @staticmethod
-    def _generate_user_id(seed: int = 0) -> int:
-        ns = time.time_ns()
-        return ((ns // 8000000) + seed*2) % 100000000
+#     @staticmethod
+#     def _generate_user_id(seed: int = 0) -> int:
+#         ns = time.time_ns()
+#         return ((ns // 8000000) + seed*2) % 100000000
 
-    def execute_with_input(
-        self,
-        msg: str,
-        user_id: Optional[int] = None,
-        llm_type: str = "gpt-4o-mini",
-        max_retries: int = 3,
-    ):
-        """Send utterance to Industry server directly without dependency."""
-        if user_id is None:
-            if ChatbotIndustry.global_user_counter == 0:
-                ChatbotIndustry.global_user_counter = self._generate_user_id()
-            else:
-                ChatbotIndustry.global_user_counter += 1
-            user_id_val = ChatbotIndustry.global_user_counter
-        else:
-            user_id_val = user_id
+#     def execute_with_input(
+#         self,
+#         msg: str,
+#         user_id: Optional[int] = None,
+#         llm_type: str = "gpt-4o-mini",
+#         max_retries: int = 3,
+#     ):
+#         """Send utterance to Industry server directly without dependency."""
+#         if user_id is None:
+#             if ChatbotIndustry.global_user_counter == 0:
+#                 ChatbotIndustry.global_user_counter = self._generate_user_id()
+#             else:
+#                 ChatbotIndustry.global_user_counter += 1
+#             user_id_val = ChatbotIndustry.global_user_counter
+#         else:
+#             user_id_val = user_id
 
-        payload = {
-            "user_id": str(user_id_val),
-            "user_input": msg
-        }
+#         payload = {
+#             "user_id": str(user_id_val),
+#             "user_input": msg
+#         }
 
-        headers = {
-            "Content-Type": "application/json",
-            "API-KEY": self.api_key,
-        }
-        print("request headers:", headers)
-        print("request content:", payload)
-        attempt = 0
-        while attempt < max_retries:
-            try:
-                self.logger.debug(f"[ChatbotIndustry] Sending payload: {payload}")
-                response = requests.post(
-                    f"{self.url}/query",
-                    headers=headers,
-                    data=json.dumps(payload)
-                )
-                response.raise_for_status()
-                resp_json = response.json()
+#         headers = {
+#             "Content-Type": "application/json",
+#             "API-KEY": self.api_key,
+#         }
+#         print("request headers:", headers)
+#         print("request content:", payload)
+#         attempt = 0
+#         while attempt < max_retries:
+#             try:
+#                 self.logger.debug(f"[ChatbotIndustry] Sending payload: {payload}")
+#                 response = requests.post(
+#                     f"{self.url}/query",
+#                     headers=headers,
+#                     data=json.dumps(payload)
+#                 )
+#                 response.raise_for_status()
+#                 resp_json = response.json()
                                
-                print("response:", resp_json)
+#                 print("response:", resp_json)
           
-                # Extract answer and objects (replace with real parsing if needed)
-                message = resp_json.get("data").get("result")
-                # retrieved_obj = resp_json.get("data").get("los")
-                retrieved_obj = IndustryIPA._parse_response_to_content_outputs(resp_json)
-                return True, message, retrieved_obj
+#                 # Extract answer and objects (replace with real parsing if needed)
+#                 message = resp_json.get("data").get("result")
+#                 # retrieved_obj = resp_json.get("data").get("los")
+#                 retrieved_obj = IndustryIPA._parse_response_to_content_outputs(resp_json)
+#                 return True, message, retrieved_obj
 
-            except Exception as e:
-                self.logger.error(f"[ChatbotIndustry] Request attempt {attempt+1} failed: {e}")
-                attempt += 1
-                if attempt >= max_retries:
-                    return False, f"chatbot request failed after {max_retries} attempts", {}
-            except json.JSONDecodeError:
-                self.logger.error("[ChatbotIndustry] Invalid JSON response")
-                return False, "Invalid JSON response from server", {}
+#             except Exception as e:
+#                 self.logger.error(f"[ChatbotIndustry] Request attempt {attempt+1} failed: {e}")
+#                 attempt += 1
+#                 if attempt >= max_retries:
+#                     return False, f"chatbot request failed after {max_retries} attempts", {}
+#             except json.JSONDecodeError:
+#                 self.logger.error("[ChatbotIndustry] Invalid JSON response")
+#                 return False, "Invalid JSON response from server", {}
 ##############################################################################################################
 # RASA
 class ChatbotRasa(Chatbot):

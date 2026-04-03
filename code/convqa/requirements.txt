@@ -1,0 +1,16 @@
+pandas 
+faiss-cpu 
+sentence-transformers 
+openai 
+geopy 
+python-dateutil
+
+fastapi 
+uvicorn 
+python-dotenv 
+ollama
+json_repair
+azure-ai-inference
+azure-core
+google-auth
+google-genai
