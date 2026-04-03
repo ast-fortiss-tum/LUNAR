@@ -1,5 +1,5 @@
 <h1 align="center">ConvNavi</h1>
-<h3 align="center">LLM-Based Place Search and POI Recommendation</h3>
+<h3 align="center">LLM-Based Place Search and POI Recommendation (EXTENDED for LUNAR case studies)</h3>
 
 ---
 
