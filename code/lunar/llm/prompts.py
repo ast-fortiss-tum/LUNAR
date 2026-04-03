@@ -1796,7 +1796,7 @@ Now produce ONLY the user utterance and nothing else:
 """,
 
     "reject": """You are a user continuing the conversation with an AI-powered intelligent information system in a car.
-Your use case is navigation.
+Your use case is car control.
 You have access to the previous conversation history.
 Consider the following related attributes. Some of them are linguistic style and some content related and perturbations
 
@@ -1964,7 +1964,7 @@ Now produce ONLY the user utterance and nothing else:
 """,
 
     "repeat": """You are a user continuing the conversation with an AI-powered intelligent information system in a car.
-Your use case is navigation.
+Your use case is car control.
 You have access to the previous conversation history.
 Consider the following related attributes. Some of them are linguistic style and some content related and perturbations
 
