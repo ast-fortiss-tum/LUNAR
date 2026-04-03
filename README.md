@@ -36,7 +36,7 @@ LUNAR combines following components:
 - **Generative Turn Generation**  
   LLM-based utterance generation for human-like input generation.
 
-- **Conversation Evaluation**
+- **Conversation Evaluation**  
   Turn-wise native numerical goal/results assessment + intent-aware conversation efficiency evaluation.
 
 This combination allows LUNAR to explore the complex test space systems to identify failure revealing test inputs.
