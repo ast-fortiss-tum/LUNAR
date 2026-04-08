@@ -1,6 +1,7 @@
 <h1 align="center">ConvNavi</h1>
 <h3 align="center">LLM-Based Place Search and POI Recommendation (EXTENDED for LUNAR case studies)</h3>
 
+Original code and README from here: [https://github.com/Leviathan321/ConvNavi](https://github.com/Leviathan321/ConvNavi)
 ---
 
 ## Overview
