@@ -9,17 +9,10 @@ LUNAR is an automated testing framework for benchmarking multi-turn conversation
 
 ## Table of Contents
 
-- [Overview](#overview)
 - [Approach](#approach)
 - [Replication](#Replication)
 - [Results](#results)
 - [Supplementary Material](#supplementary-material)
-
----
-
-## Overview
-
-Testing conversational systems is inherently challenging due to the combinatorial explosion of possible interaction paths. LUNAR addresses this challenge by providing a structured and automated approach to explore multi-turn conversations and uncover system weaknesses.
 
 ---
 
