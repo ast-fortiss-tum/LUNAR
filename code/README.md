@@ -11,14 +11,18 @@ The high-level project overview is as follows:
 |-- sensei        # Baseline
 |-- convqa        # Open-source chatbot
 |-- lunar/        # Test approach
-    |-- run_mt_navi.py
-    |-- run_mt_car_control.py
+    |-- examples                      # Multi-Turn Fitness Implementation     
     |-- opensbt/
-    |-- llm
+    |-- llm                           # Core implementation
+        |-- model                     # Intent rules, intent definition   
+        |-- sut
+           |-- ipa_base_cc            # User simulation logic definition 
     |-- configs
     |-- judge_eval_mt
         |-- evaluate_agreement_users.py
         |-- evaluate_judge_humans_major.py
+|-- run_mt_navi.py                # Navi Case Study
+|-- run_mt_car_control.py         # Car Control Case Study
 ```
 ---
 

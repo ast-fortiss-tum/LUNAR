@@ -1,5 +1,9 @@
-# Results
+## Results
 
-metrics: This folder contains the metric results over all experiments conducted with LUNAR.
+This directory contains the outputs generated during the evaluation of LUNAR.
 
-data: This folder contains data from the search execution with LUNAR and data used in the survey for the judge evaluation (RQ0).
+### metrics/
+Contains the aggregated metric results for all conducted experiments.
+
+### data/
+Includes sample of data produced during LUNAR’s search executions, and survey datasets for judge evaluation (RQ0).
