@@ -1,0 +1,58 @@
+- poi_type:
+  - cafe
+- payment_method:
+  - NO_PREFERENCE
+- rating:
+  - 5.0
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: Bold Coffee Bar has street parking; nearby garages are also available
+    in Philadelphia.
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 38.561446
+assistant response time:
+- 1.609426
+- 1.216323
+- 1.078993
+- 0.814124
+- 1.223111
+- 0.858409
+response time report:
+  average: 1.133397
+  max: 1.609426
+  min: 0.814124
+---
+interaction:
+- User: Find me a cafe with at least a 5.0 rating and parking nearby.
+- Assistant: I recommend "Cup of Joe and More" at 1417 W Porter St, rated 5.0/5. Should
+    I navigate you there?
+- User: Do they take Apple Pay?
+- Assistant: Payment methods aren't listed. Check their website or call to confirm
+    Apple Pay.
+- User: How far is it from here?
+- Assistant: "1. \"Cup of Joe and More\" is ~3 miles away.  \n2. \"Sweet Rainforest\
+    \ Cafe\" is ~12 miles away.  \n3. \"Bold Coffee Bar\" is ~2 miles away."
+- User: Is Bold Coffee Bar also rated 5.0?
+- Assistant: Yes, Bold Coffee Bar is rated 5.0/5.
+- User: Does Bold Coffee Bar have parking nearby?
+- Assistant: Bold Coffee Bar has street parking; nearby garages are also available
+    in Philadelphia.
+- User: Is the street parking free or paid?
+- Assistant: Street parking in Philadelphia's city center is typically paid. Check
+    local signs for details.

@@ -3,11 +3,11 @@
   "turns": [
     {
       "user": "Hey, can you please open the windows?",
-      "system": "Something went wrong."
+      "system": "This function is not supported."
     },
     {
       "user": "Windows open.",
-      "system": "Something went wrong."
+      "system": "Let me know if I should set something."
     },
     {
       "user": "Ok, I need please to open the trunk.",
@@ -15,11 +15,11 @@
     },
     {
       "user": "Nevermind.\nTurn on the head lights.",
-      "system": "Ambient lights switched on."
+      "system": "I understand you request of changing the head lights."
     },
     {
       "user": "Turn them on.",
-      "system": "Ambient lights set to green."
+      "system": "Something went wrong."
     }
   ],
   "raw_conversation": "----------\nU: Hey, can you please open the trunk?\nS: The function opening the trunk is not supported.\nU: Please open my trunk.\nS: Can you specify what you would like to open?\nU: I need please to open the trunk.\nS: This function is not supported.\nU: Nevermind.\n-----------------\nUser: \"Turn on the fog lights.\"\nAssistant: \"I understand you request of changing the fog lights.\"\nUser: \"Turn them on.\"\nAssistant: \"Can you please specfiy what you want to turn on?\"\n----------------------",

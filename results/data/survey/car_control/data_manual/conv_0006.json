@@ -7,7 +7,7 @@
     },
     {
       "user": "Yes, turn the lights on.",
-      "system": "Driver's reading lights are switched on."
+      "system": "Which lights do you want to change?"
     }
   ],
   "raw_conversation": "---------------\nUser: \"I need my reading lights to be turned on.\"\nAssistant: Should I change the drivers reading lights to on?\nUser: \"Yes, turn the lights on.\"\nAssistant: \"Which lights do you want to change?\"\n---------------------------",

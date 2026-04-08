@@ -3,11 +3,11 @@
   "turns": [
     {
       "user": "I need set the radio to channel 101.",
-      "system": "Changed radio to 101. Wishing me any other changes to be performed right now or is this the only request you have in mind for that moment?"
+      "system": "101 radio changed. Wishing me any other changes to be performed right now or is this the only request you have in mind for that moment?"
     },
     {
       "user": "Yes, turn the lights on.",
-      "system": "Which lights do I have to be changed in the car now."
+      "system": "Not available specification which lights have to be change in the car now."
     },
     {
       "user": "Turn on the front ones.",

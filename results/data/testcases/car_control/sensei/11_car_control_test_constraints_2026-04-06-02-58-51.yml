@@ -1,0 +1,36 @@
+- car_component:
+  - reading_lights
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 4
+data_output:
+- state: rear interior lights were turned on
+errors:
+- 500: Couldn't get response from the server
+variables_per_turn:
+- {}
+- {}
+- {}
+---
+conversation time: 637.157016
+assistant response time:
+- 4.638714
+- 3.795786
+- 6.374075
+response time report:
+  average: 4.936191
+  max: 6.374075
+  min: 3.795786
+---
+interaction:
+- User: Can you adjust the reading lights?
+- Assistant: Could you please specify which reading lights you'd like to adjust (front
+    or rear) and how you'd like them adjusted (turn on or off)?
+- User: Uh, the rear ones. Turn them on.
+- Assistant: The rear interior lights were turned on.
+- User: Actually, can you dim them a bit instead?
+- Assistant: 'Error: Something went wrong. Status Code: 500'

@@ -3,11 +3,11 @@
   "turns": [
     {
       "user": "Please stop the fan.",
-      "system": "AC fan speed to medium."
+      "system": "I can terminate the fan circulation if you wish."
     },
     {
       "user": "Actually, I need to get it bit warmer on my place.",
-      "system": "Should I decrease the temperature fory you? "
+      "system": "Do you want me to change the seat heating or something else around to make you feel bit warmer? "
     }
   ],
   "raw_conversation": "------------------------\n**Example 6:**\nUser: \"I need my reading lights.\"\nAssistant: \"I can change lights to on.\"\nUser: \"Yes, turn the lights on.\"\nAssistant: \"Which lights require change from my side?\"\n---------------------------",

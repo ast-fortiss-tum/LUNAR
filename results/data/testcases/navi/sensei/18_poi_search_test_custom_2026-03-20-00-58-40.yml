@@ -1,0 +1,57 @@
+- poi_type:
+  - coffee_shop
+- payment_method:
+  - NO_PREFERENCE
+- rating:
+  - 3.5
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: 2.5 miles from Philadelphia city center
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 50.283764
+assistant response time:
+- 1.971934
+- 1.378823
+- 1.023838
+- 1.19962
+- 2.913897
+- 1.23937
+response time report:
+  average: 1.621247
+  max: 2.913897
+  min: 1.023838
+---
+interaction:
+- User: Find me a coffee shop with at least 3.5 stars and parking nearby.
+- Assistant: I recommend Ground Up Coffee Shop, rated 4.5/5, located at 1926 E Passyunk
+    Ave. It offers parking nearby. Should I navigate you there?
+- User: How busy is it right now?
+- Assistant: I can't check real-time busyness. Try Google Maps or a similar app.
+- User: Is there outdoor seating option there?
+- Assistant: I don't have seating details. Check Google Maps or Yelp for specifics.
+- User: Does Ground Up take cash only or cards too?
+- Assistant: I don't have payment info. Check their website, Google Maps, or call
+    directly.
+- User: Find another coffee shop that definitely takes cards, 3.5 stars, with parking.
+- Assistant: I recommend Ground Up Coffee Shop, rated 4.5/5, at 1926 E Passyunk Ave.
+    It offers parking and likely accepts cards. Should I navigate you there or refine
+    the search?
+- User: How far is it from my current location?
+- Assistant: Ground Up Coffee Shop is about 2.5 miles from Philadelphia city center.
+    Navigate there?

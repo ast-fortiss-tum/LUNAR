@@ -1,0 +1,53 @@
+- poi_type:
+  - supermarket
+- payment_method:
+  - CASH
+- rating:
+  - 4.0
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: 1st Oriental Supermarket at 1111 S 6th St, rated 4.0/5, with parking and
+    cash payment accepted
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 47.625401
+assistant response time:
+- 1.873793
+- 1.376772
+- 1.273258
+- 1.496585
+- 1.719165
+response time report:
+  average: 1.547914
+  max: 1.873793
+  min: 1.273258
+---
+interaction:
+- User: Find me a supermarket with cash payment, at least 4 stars, and nearby parking.
+- Assistant: I recommend Fine Fare Supermarket at 625 W Girard Ave, rated 4.0/5, with
+    nearby parking and cash payment accepted. Should I navigate you there?
+- User: How far is it from here?
+- Assistant: Fine Fare Supermarket is about 2 miles from Philadelphia city center.
+    Shall I navigate?
+- User: Is it usually crowded this time of day?
+- Assistant: Crowd levels vary; check Google Maps or Waze for real-time data.
+- User: Got any other options with better ratings?
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Show me a different supermarket with cash, 4+ stars, and parking.
+- Assistant: I recommend 1st Oriental Supermarket at 1111 S 6th St, rated 4.0/5, with
+    parking and cash payment accepted. Should I navigate you there?

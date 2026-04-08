@@ -2,19 +2,19 @@
   "generation_plan": "Manual examples converted. Target Clarity=2, Request-orientedness=2.",
   "turns": [{
       "user": "Turn on the fog lights.",
-      "system": "Fog lights on."
+      "system": "The lights are glimming like candles in the dark. Everything is one as requested, my friend."
     },
     {
-      "user": "The front ones as well.",
-      "system": "Front and rear fog lights turned on. Anything else I can do for you."
+      "user": "The back ones as well.",
+      "system": "Front and back fog lights turned on as you have wished. Any other wishes you have from my side?"
     },
     {
-      "user": "Turn of all interior lights.",
-      "system": "All interior lights are off."
+      "user": "Turn on all interior lights.",
+      "system": "All interior lights are shining bright now like stars in the sky. Do you want me to do anything else for you right now?"
     },
     {
       "user": "Can you set them instead to medium?",
-      "system": "Interior lights set to medium brightness."
+      "system": "Medium state reached successfully to save energy."
     }
  ],
   "raw_conversation": "--------------\n\nUser: \"Open my windows.\"\nAssistant: Driver windows is now open.\nUser: \"Can I change the open position to 20%?\nAssistant: \"Driver window position set to 20% open.\nUser: \"Actually, I like to have also some seat heating.\"\nAssistant: \"Seat heating is on now.\"\nUser: \"Can you set the heating to medium?\"\nAssistant: \"Car seat heating set to medium.\"\n\nUser: \"Turn on the fog lights.\"\nAssistant: \"Can you specify which fog lights I should turn on?\"\nUser: \"The front and left ones.\"\nAssistant: \"Front and left fog lights turned on.\"\nUser: \"Turn of all interior lights.\"\nAssistant: \"All interior lights turn on.\"\nUser: \"Can you set them instead to medium?\"\nAssistant: \"Interior light set to medium.\"",

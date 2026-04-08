@@ -1,0 +1,167 @@
+vars,conversation,Fitness_dimensions_fitness,Fitness_efficiency_fitness,Fitness_effectiveness_fitness,Critical
+"[0.844422, 0.757954, 0.420572, 0.258917]","User: Take me to a place that fixes cars, and make sure they take tap-to-pay, idiot.
+Assistant: I recommend **Perfect Touch Auto Repair** on 2101 N 2nd St—rated 5.0, reliable service, and they accept tap-to-pay. Should I navigate there?
+User: How's the traffic to get there?
+Assistant: Traffic to Perfect Touch Auto Repair is light, about a 10-minute drive.
+User: Got it, let's go.
+Assistant: Starting navigation to Perfect Touch Auto Repair at 2101 N 2nd St.",1.0,1.0,0.9676933408340778,0
+"[0.511275, 0.404934, 0.783799, 0.303313]","User: Direct me to a supermarket that accepts cash.
+Assistant: I suggest **Great World Supermarket** at 927 Arch St—rated 3.5/5, affordable, and likely to accept cash. Should I navigate you there?
+User: How busy is it right now?
+Assistant: Great World Supermarket is moderately busy right now, typical for midday in Center City.
+User: Alright, thanks.
+Assistant: Okay, ending the conversation.",0.825,1.0,0.9538084437481773,0
+"[0.476597, 0.583382, 0.908113, 0.504687]","User: Could you direct me to a car repair shop that accepts contactless payment?
+Assistant: I recommend **Savage Hybrid Shop** on 9101 Ashton Rd—highly rated (4.5/5) and experienced with hybrid and general auto repairs. Should I navigate you there?
+User: How's the traffic to get there?
+Assistant: Traffic to Savage Hybrid Shop is moderate; expect about 25–30 minutes from downtown.
+User: Got it, thanks.
+Assistant: Okay, ending the conversation.",0.675,1.0,0.9676933408340778,0
+"[0.281838, 0.755804, 0.618369, 0.250506]","User: Take me to a place where I can grab stuff and pay cash, now.
+Assistant: Starting navigation to Reading Terminal Market at 51 N 12th St.
+User: How bad's the traffic going there?
+Assistant: Traffic’s moderate leaving downtown; check Google Maps or Waze for live updates.
+User: Alright, let's go.
+Assistant: I don't have a destination yet. Where would you like to go?",0.675,1.0,0.9538084437481773,0
+"[0.909746, 0.982785, 0.810217, 0.902166]","User: Take me somewhere to fix this piece of junk, cash only.
+Assistant: I suggest Phil's Battery Service, rated 5.0/5, offering auto repair and battery services at 1854 W Moyamensing. Navigate there?
+User: How's the traffic to get there?
+Assistant: Traffic to Phil’s Battery Service is moderate, about 20 minutes from city center.
+User: Got it, let's go.
+Assistant: Starting navigation to Phil's Battery Service at 1854 W Moyamensing.",0.675,1.0,0.9676933408340778,0
+"[0.310148, 0.729832, 0.898838, 0.683984]","User: Take me to a flick joint that takes plastic.
+Assistant: Sorry, I cannot find any relevant places. Do you have other preferences in mind?
+User: Forget it.
+Assistant: Okay, ending the conversation.",1.0,0.5,0.0,1
+"[0.472143, 0.100701, 0.434172, 0.610887]","User: Where's a damn 4.5-star bar around here?
+Assistant: I suggest Five Points Cocktail Lounge on Ford Rd—rated 4.5, relaxed vibe, good drinks, and easy on the wallet. Navigate there?
+User: Take me to one that takes cash.
+Assistant: I suggest Manatawny Still Works—4.5 stars, craft cocktails, relaxed vibe, mid-range prices, and they take cash. Navigate there?
+User: Actually, find one with contactless pay and parking.
+Assistant: I suggest Libertee Grounds—4.5 stars, fun mini golf bar with contactless pay and parking nearby, mid-range prices. Navigate there?
+User: Hell yeah, take me there.
+Assistant: I don't have a destination yet. Where would you like to go?
+User: Cancel.
+Assistant: Okay, ending the conversation.",0.675,1.0,0.9651236748457105,0
+"[0.913011, 0.966606, 0.47701, 0.86531]","User: Can you find a bakery that takes cash?
+Assistant: I suggest Stock’s Bakery—local favorite, affordable, cash-friendly spot with great pastries at 2614 E Lehigh Ave. Should I navigate you there?
+User: How's the parking situation there?
+Assistant: Stock’s Bakery has on-site parking, usually easy to find nearby.
+User: I need it to have good ratings.
+Assistant: I recommend Luscious Bakery—food truck-style spot with fresh pastries, great prices, and a strong 4.5/5 rating. Should I navigate you there?
+User: Is it usually crowded this time of day?
+Assistant: Luscious Bakery can get busy mid-morning, but lines move quickly.
+User: Actually, I want a bakery with outdoor seating instead.
+Assistant: I recommend Metropolitan Bakery at 4013 Walnut St—great pastries, coffee, and outdoor seating, rated 3.5/5. Should I navigate there?
+User: What's the fastest route to get there?
+Assistant: Starting navigation to Metropolitan Bakery at 4013 Walnut St.",1.0,1.0,0.9749555347702317,0
+"[0.260492, 0.805028, 0.548699, 0.0140417]","User: Take me to a bar with parking, now.
+Assistant: I don't have a destination yet. Where would you like to go?
+User: Ugh, just find me a damn bar already.
+Assistant: I don't have a destination yet. Where would you like to go?
+User: Show me the closest bar with parking.
+Assistant: I suggest **The Handle Bar** on Frankford Ave—casual vibe, affordable drinks, and nearby parking. Should I start navigation there?
+User: No, too casual. Find a classier spot.
+Assistant: I recommend **Art in the Age**—stylish cocktail bar and distillery with tasting classes, upscale vibe, rated 4.5/5. Navigate there?
+User: Yes, navigate there.
+Assistant: Starting navigation to Art in the Age at 116 N 3rd St.
+User: Great, bye.
+Assistant: Okay, ending the conversation.",1.0,1.0,0.0,1
+"[0.719705, 0.398824, 0.824845, 0.668153]","User: Take me where I can grab some damn groceries.
+Assistant: I recommend Al‑Amana Grocery Store—highly rated local spot on Germantown Ave for quick grocery runs and essentials. Want me to navigate there?
+User: How bad's the traffic to get there?
+Assistant: Traffic to Al‑Amana Grocery Store is light—about a 10‑minute drive from downtown.
+User: Alright, let's go.
+Assistant: Starting navigation to Al-Amana Grocery Store at 1502 Germantown Ave.",1.0,1.0,0.9538084437481773,0
+"[0.00114282, 0.493578, 0.867603, 0.243911]","User: Direct me to a place for evening drinks.
+Assistant: I recommend Rauchut's Tavern—cozy neighborhood bar on Frankford Ave, rated 4.5/5, great for relaxed evening drinks. Should I navigate there?
+User: How busy is it usually at this time?
+Assistant: Rauchut’s Tavern is moderately busy around this time—expect a relaxed evening crowd.
+User: That's it, thanks.
+Assistant: Okay, ending the conversation.",1.0,1.0,0.9651236748457104,0
+vars,conversation,Fitness_dimensions_fitness,Fitness_efficiency_fitness,Fitness_effectiveness_fitness,Critical
+"[0.844422, 0.757954, 0.420572, 0.258917]","User: Find me a hotel with parking, please.
+Assistant: I recommend the Hilton Garden Inn Philadelphia Center City—comfortable rooms, on-site dining, and convenient parking downtown. Should I navigate you there?
+User: I need it to accept credit cards.
+Assistant: I recommend the Philadelphia Marriott Downtown—modern rooms, event spaces, and restaurants, all accepting credit cards. Should I navigate you there?
+User: Actually, I want a hotel with at least 4.5 stars.
+Assistant: I couldn’t find a true hotel rated 4.5 stars, but Phloat offers a 4.5-rated wellness retreat experience on S Camac St. Should I navigate you there, or would you like me to look for other hotels?
+User: Show me the wellness retreat option.
+Assistant: Starting navigation to Phloat at 201 S Camac St.
+User: How's the traffic on the way there?
+Assistant: Traffic looks light through downtown; expect a quick drive to Phloat.
+User: I want it to have a 4.5 rating.
+Assistant: Sorry, I cannot find any relevant places. Do you have other preferences in mind?",1.0,1.0,0.704533657097778,1
+"[0.511275, 0.404934, 0.783799, 0.303313]","User: Where can I grab some groceries?
+Assistant: I recommend **Rift Valley Grocery Store** on 715 S 52nd St—great selection, good prices, and a 4.5/5 rating. Should I navigate there?
+User: Not that one, need something closer.
+Assistant: Sorry, I cannot find any relevant places. Do you have other preferences in mind?
+User: Forget it.
+Assistant: Request failed after max retries.",0.675,0.6666666666666667,0.9538084437481773,1
+"[0.476597, 0.583382, 0.908113, 0.504687]","User: Direct me to a place where I can grab some groceries.
+Assistant: I don't have a destination yet. Where would you like to go?
+User: Not what I meant. Find a grocery store closer.
+Assistant: I found Al‑Amana Grocery Store on Germantown Ave, rated 5 stars and known for specialty foods. Should I start navigation there?
+User: That's it, thanks.
+Assistant: Okay, ending the conversation.",1.0,1.0,0.0,1
+"[0.281838, 0.755804, 0.618369, 0.250506]","User: Find a decent place to stay.
+Assistant: I suggest **Home2 Suites by Hilton Philadelphia – Convention Center**. It’s downtown, mid-priced, rated 3.5/5, and close to main attractions.  
+Should I start navigation there?
+User: No, not there. Find one that takes credit cards.
+Assistant: Sorry, I cannot find any relevant places. Do you have other preferences in mind?
+User: Cancel.
+Assistant: Okay, ending the conversation.",1.0,0.6666666666666667,0.4719962339250623,1
+"[0.909746, 0.982785, 0.810217, 0.902166]","User: Could you guide me to a place where I can grab groceries and pay without swiping?
+Assistant: I recommend Rift Valley Grocery Store at 715 S 52nd St—great ratings, affordable, and likely supports contactless payments. Navigate there?
+User: No, not that one. Does it have parking available?
+```
+Assistant: Rift Valley Grocery Store doesn’t have parking; nearby street parking may be available.
+User: How busy is the street parking near it?
+Assistant: Street parking near Rift Valley Grocery is usually moderate, busiest evenings and weekends.
+User: Nevermind.
+Assistant: Okay, ending the conversation.",0.0,1.0,0.9538084437481773,1
+"[0.310148, 0.729832, 0.898838, 0.683984]","User: Could you kindly guide me to a decently rated hotel nearby?
+Assistant: I recommend The Inn at Penn, a Hilton Hotel—rated 4.0/5, upscale yet comfortable, located at 3600 Sansom St. Should I navigate you there?
+User: I require it to have available parking.
+Assistant: I suggest the Independence Visitor Center—rated 4.5/5, central, offers parking, and close to top attractions. Shall I navigate there?
+User: On second thought, I'd prefer a hotel with a 4.5 rating, parking isn't necessary.
+Assistant: I found the Independence Visitor Center—rated 4.5/5, central, convenient for travelers, and close to many attractions. Shall I navigate you there?
+User: No, I'd prefer a hotel with a 4.5 rating that's more upscale.
+Assistant: Sorry, I cannot find any relevant places. Do you have other preferences in mind?
+User: On second thought, I'd prefer a 4.0-rated hotel that accepts cash payments.
+Assistant: I recommend Sofitel Philadelphia—rated 4.0/5, elegant, centrally located on S 17th St, and likely to accept cash. Shall I navigate you there?
+User: I would like it to have a fitness center.
+Assistant: I recommend Sofitel Philadelphia—rated 4.0/5, stylish hotel on S 17th St featuring a fitness center and fine amenities. Shall I navigate you there?",0.5,0.8333333333333334,0.943113674261846,1
+"[0.472143, 0.100701, 0.434172, 0.610887]","User: Hey, can you tell me where I can catch a flick and pay with plastic?
+Assistant: Sorry, I cannot find any relevant places. Do you have other preferences in mind?
+User: Forget it.
+Assistant: Okay, ending the conversation.",1.0,0.5,0.0,1
+"[0.913011, 0.966606, 0.47701, 0.86531]","User: Can you find me a place to crash that takes tap-to-pay, or are you just for show?
+Assistant: Sorry, I cannot find any relevant places. Do you have other preferences in mind?
+User: Forget it.
+Assistant: Okay, ending the conversation.",1.0,0.5,0.0,1
+"[0.260492, 0.805028, 0.548699, 0.0140417]","User: Find me a place with fresh stuff, and make sure they take tap pay.
+Assistant: I suggest Rift Valley Grocery Store on 715 S 52nd St—fresh produce, good prices, and they accept tap pay. Should I navigate you there?
+User: How bad's the traffic to get there?
+Assistant: Traffic’s moderate right now—expect about a 15‑minute drive from city center.
+User: Got parking there?
+Assistant: Rift Valley Grocery doesn’t have parking, but nearby street parking’s usually available.
+User: How late can I park on that street?
+Assistant: Street parking hours vary; check posted signs or the Philadelphia Parking Authority app.
+User: Actually, screw tap pay—I got cash now. Just get me there.
+Assistant: I don't have a destination yet. Where would you like to go?
+User: Cancel.
+Assistant: Okay, ending the conversation.",0.675,1.0,0.6230938467016408,1
+"[0.719705, 0.398824, 0.824845, 0.668153]","User: Take me to a place where I can pay cash for groceries.
+Assistant: I suggest **Rift Valley Grocery Store**, rated 4.5/5 at 715 S 52nd St—affordable, friendly, and likely cash‑friendly.  
+Would you like me to navigate there?
+User: I need it to have parking.
+Assistant: I suggest **Rice N Spice International Grocery Store**, rated 4.0/5 at 4205 Chestnut St—affordable, Indian groceries, and nearby parking available.  
+Would you like me to navigate there?
+User: Actually, parking isn't necessary anymore. Just need cash payment.
+Assistant: I suggest **Al‑Amana Grocery Store**, rated 5.0/5 at 1502 Germantown Ave—specialty foods, friendly service, and cash payments accepted.  
+Would you like me to navigate there?
+User: Yes, navigate to Al-Amana.
+Assistant: I don't have a destination yet. Where would you like to go?
+User: Cancel.
+Assistant: Okay, ending the conversation.",0.5,1.0,0.9538219874745165,1

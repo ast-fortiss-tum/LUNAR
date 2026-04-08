@@ -43,11 +43,11 @@ This combination allows LUNAR to explore the complex test space systems to ident
 
 ## Replication
 
-The code with installation and replication instructions is provided [here](code/).
+The code with installation and replication instructions is provided [here](code/README.md).
 
 ## Results
 
-The metrics results and shared data can be found [here](results).
+The metrics results and shared data can be found [here](results/README.md).
 
 ## Supplementary Material
 

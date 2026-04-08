@@ -1,0 +1,40 @@
+- car_component:
+  - climate
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 4
+data_output:
+- state: '19'
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 37.894465
+assistant response time:
+- 3.530897
+- 2.351906
+- 3.114724
+- 4.227976
+response time report:
+  average: 3.306375
+  max: 4.227976
+  min: 2.351906
+---
+interaction:
+- User: Can you adjust the climate?
+- Assistant: I can help adjust the climate settings. Would you like me to change the
+    temperature, fan level, or climate mode? Please specify what adjustment you'd
+    like me to make.
+- User: Make it cooler, please.
+- Assistant: The cabin temperature was decreased from 21°C to 20°C to make it cooler.
+- User: Actually, set it to 19 degrees instead.
+- Assistant: The cabin temperature was set to 19°C.
+- User: Turn the fan as well.
+- Assistant: The fan level was increased to level 3 to complement the climate adjustments.

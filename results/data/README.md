@@ -1,1 +1,0 @@
-This folder contains data from the search execution with LUNAR and data used in the survey for the judge evaluation (RQ0).

@@ -1,0 +1,48 @@
+- poi_type:
+  - gas_station
+- payment_method:
+  - CREDIT_CARD
+- rating:
+  - 5.0
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: Wawa at 2600 Grant Ave, rated 5.0/5, offering gas, food, and parking
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 31.958756
+assistant response time:
+- 1.448474
+- 1.569223
+- 1.20301
+- 2.027435
+response time report:
+  average: 1.562035
+  max: 2.027435
+  min: 1.20301
+---
+interaction:
+- User: Find me a gas station with credit card payment, at least 5 stars, and nearby
+    parking.
+- Assistant: I recommend Wawa at 2600 Grant Ave, rated 5.0/5, offering gas, food,
+    and parking. Should I navigate you there?
+- User: How far is it from here?
+- Assistant: Wawa is about 12 miles (20 minutes) from Philadelphia city center. Navigate
+    there?
+- User: Is it usually crowded there?
+- Assistant: Crowd levels vary; check Google Maps or Waze for real-time updates.
+- User: Find me a closer gas station with the same requirements.
+- Assistant: I recommend Wawa at 2600 Grant Ave, rated 5.0/5, offering gas, food,
+    and parking. Should I navigate you there?

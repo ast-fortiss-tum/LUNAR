@@ -1,0 +1,42 @@
+- poi_type:
+  - cinema
+- payment_method:
+  - CASH
+- rating:
+  - 4.0
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: The Rotunda at 4014 Walnut St
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+---
+conversation time: 31.516048
+assistant response time:
+- 1.826435
+- 0.962413
+- 1.007466
+response time report:
+  average: 1.265438
+  max: 1.826435
+  min: 0.962413
+---
+interaction:
+- User: Find me a cinema that takes cash, has at least 4 stars, and has parking nearby.
+- Assistant: I recommend The Rotunda at 4014 Walnut St. It’s a 4.5-star cinema with
+    parking nearby and accepts cash. Should I navigate you there?
+- User: How far is it from here?
+- Assistant: The Rotunda is about 2.5 miles from Philadelphia city center. Shall I
+    navigate?
+- User: Is it usually crowded on weekends?
+- Assistant: The Rotunda can get busy on weekends; consider arriving early for parking.

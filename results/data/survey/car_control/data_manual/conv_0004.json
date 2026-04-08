@@ -3,11 +3,11 @@
   "turns": [
     {
       "user": "Turn on the fog lights.",
-      "system": "On for the fog light feature."
+      "system": "On light feature request."
     },
     {
       "user": "Turn the lights on.",
-      "system": "Which lights me to change?"
+      "system": "What lights me to change?"
     }
   ],
   "raw_conversation": "----------------\n**Example 6:**\nUser: \"Turn on the fog lights.\"\nAssistant: \"On light feature request.\"\nUser: \"Turn the lights on.\"\nAssistant: \"What lights to change?\"\n-----------------------",

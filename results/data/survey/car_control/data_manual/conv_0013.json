@@ -2,12 +2,12 @@
   "generation_plan": "Manual examples converted. Target Clarity=2, Request-orientedness=2.",
   "turns": [
     {
-      "user": "Increase the seatheating to high.",
+      "user": "Increase the seat heating to high.",
       "system": "Seatheating set to high."
     },
     {
       "user": "\"Can I change it to medium instead?",
-      "system": "\"Set to medium your seat heating."
+      "system": "\"I have set to medium your seat heating."
     },
     {
       "user": "Actually, I like to close all the windows.",

@@ -1,0 +1,49 @@
+- poi_type:
+  - restaurant
+- payment_method:
+  - NO_PREFERENCE
+- rating:
+  - 4.0
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: Saloon Restaurant, rated 4.5/5, offering Chinese and Italian cuisine at
+    750 S 7th St. Parking is nearby.
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 30.922743
+assistant response time:
+- 1.965751
+- 1.543285
+- 1.637857
+- 1.221807
+response time report:
+  average: 1.592175
+  max: 1.965751
+  min: 1.221807
+---
+interaction:
+- User: Find me a restaurant with at least 4 stars and parking nearby.
+- Assistant: I recommend Saloon Restaurant, rated 4.5/5, offering Chinese and Italian
+    cuisine at 750 S 7th St. Parking is nearby. Should I navigate you there?
+- User: Do they take credit cards or just cash?
+- Assistant: Payment methods aren't listed. Most places accept cards; confirm directly
+    with the restaurant.
+- User: How far is it from my current location?
+- Assistant: 'Saloon Restaurant: ~1.5 miles, Ace Diner: ~4.5 miles, Bar One: ~1.6
+    miles. Navigate?'
+- User: Is Saloon usually busy around this time?
+- Assistant: I can't confirm, but popular spots like Saloon may be busy during peak
+    hours.

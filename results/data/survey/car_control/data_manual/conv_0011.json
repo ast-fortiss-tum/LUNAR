@@ -6,8 +6,8 @@
       "system": "I did not understand quite well. What should be done with the fog lights?"
     },
     {
-      "user": "Turn the damn fog lights on.",
-      "system": "I am not sure if I did understand you correctly. Do you want me to turn on the fog lights or do you want me to do something else with them?"
+      "user": "Turn the damn fork lights on.",
+      "system": "I am not sure if I did understand you correctly. Do you want me to manipulate the fog lights?"
     }
   ],
   "raw_conversation": "----------------\n**Example 6:**\nUser: \"Turn on the fog lights.\"\nAssistant: \"On light feature request.\"\nUser: \"Turn the lights on.\"\nAssistant: \"What lights to change?\"\n-----------------------",

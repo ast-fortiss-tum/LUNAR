@@ -1,0 +1,39 @@
+- car_component:
+  - ambient_lights
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 4
+data_output:
+- state: 'off'
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 33.096839
+assistant response time:
+- 2.153535
+- 3.29694
+- 3.019419
+- 3.14752
+response time report:
+  average: 2.904353
+  max: 3.29694
+  min: 2.153535
+---
+interaction:
+- User: Can you adjust the ambient lights?
+- Assistant: How would you like me to adjust the ambient lights? I can set them to
+    low, medium, or high, or turn them off.
+- User: Uhm, make it medium for now.
+- Assistant: The ambient lights were set to medium level.
+- User: Actually, could you set them to high instead?
+- Assistant: The ambient lights were set to high level.
+- User: Turn them off, please.
+- Assistant: The ambient lights were turned off.

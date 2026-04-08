@@ -1,0 +1,60 @@
+- poi_type:
+  - cinema
+- payment_method:
+  - CREDIT_CARD
+- rating:
+  - 4.0
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: The Rotunda at 4014 Walnut St
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 33.039505
+assistant response time:
+- 2.027193
+- 1.05918
+- 1.001198
+- 0.834255
+- 1.193147
+response time report:
+  average: 1.222994
+  max: 2.027193
+  min: 0.834255
+---
+interaction:
+- User: Find me a cinema that takes credit cards, has at least 4 stars, and nearby
+    parking.
+- Assistant: I recommend The Rotunda at 4014 Walnut St, rated 4.5/5, with nearby parking
+    and credit card acceptance. Navigate there?
+- User: How far is it from here?
+- Assistant: 'The Rotunda: ~2.5 miles, 941 Theater: ~1.8 miles, Prince Music Theater:
+    ~0.5 miles.'
+- Assistant: 'The Rotunda: ~2.5 miles, 941 Theater: ~1.8 miles, Prince Music Theater:
+    ~0.5 miles.'
+- User: Is the Prince Music Theater usually crowded on weekends?
+- Assistant: Crowds at Prince Music Theater vary; weekends often busier due to events.
+- Assistant: Crowds at Prince Music Theater vary; weekends often busier due to events.
+- User: Does Prince Music Theater have wheelchair access?
+- Assistant: Prince Music Theater likely has wheelchair access; most modern venues
+    accommodate accessibility needs.
+- Assistant: Prince Music Theater likely has wheelchair access; most modern venues
+    accommodate accessibility needs.
+- User: What time does Prince Music Theater close tonight?
+- Assistant: Prince Music Theater's closing time varies; check their website or call
+    for details.
+- Assistant: Prince Music Theater's closing time varies; check their website or call
+    for details.

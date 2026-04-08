@@ -1,0 +1,62 @@
+- poi_type:
+  - car_repair
+- payment_method:
+  - CREDIT_CARD
+- rating:
+  - 5.0
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: Reds & Son Foreign Car Repair at 338 N 13th St, rated 3.5/5
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 46.094055
+assistant response time:
+- 1.136226
+- 1.098864
+- 1.485114
+- 2.327248
+- 1.055136
+- 1.196545
+response time report:
+  average: 1.383188
+  max: 2.327248
+  min: 1.055136
+---
+interaction:
+- User: Find me a top-rated car repair shop that takes credit cards and has parking
+    nearby.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Any decent car repair spots with 5-star ratings and credit card payment? Must
+    have parking close by.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Just show me the nearest car repair with parking, 5 stars, and credit card
+    payment.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: How far is the closest car repair shop from here? Doesn't need to meet all
+    my earlier demands.
+- Assistant: I found Reds & Son Foreign Car Repair at 338 N 13th St, rated 3.5/5.
+    Would you like directions there?
+- User: Does it at least take credit cards?
+- Assistant: No information available on credit card acceptance for the listed repair
+    shops.
+- User: Ugh, forget it. Show me any 5-star car repair then.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?

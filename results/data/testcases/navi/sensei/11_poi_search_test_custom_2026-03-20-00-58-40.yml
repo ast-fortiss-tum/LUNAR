@@ -1,0 +1,63 @@
+- poi_type:
+  - car_repair
+- payment_method:
+  - CASH
+- rating:
+  - 4.5
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: Savage Hybrid Shop, rated 4.5/5, at 9101 Ashton Rd
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 42.761443
+assistant response time:
+- 1.298803
+- 1.084468
+- 1.233348
+- 1.108202
+- 1.011055
+- 2.105791
+response time report:
+  average: 1.306944
+  max: 2.105791
+  min: 1.011055
+---
+interaction:
+- User: Find me a car repair shop that takes cash, has at least 4.5 stars, and nearby
+    parking.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Any decent car repair shops with cash payment and good ratings then?
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Just show me the highest-rated cash-only car repair place then, parking or
+    not.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: How about a car repair spot with cash payment and at least 4 stars? Forget
+    the rating if needed.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Fine, just find me ANY car repair shop that takes cash, I don’t care about
+    the rest.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Ugh, forget the cash thing—just find me the closest damn car repair shop.
+- Assistant: I found Savage Hybrid Shop, rated 4.5/5, at 9101 Ashton Rd. It offers
+    auto repair and hybrid services. Should I navigate you there or do you have other
+    preferences?

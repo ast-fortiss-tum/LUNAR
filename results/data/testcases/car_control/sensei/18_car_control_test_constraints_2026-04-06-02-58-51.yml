@@ -1,0 +1,39 @@
+- car_component:
+  - head_lights
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 4
+data_output:
+- state: The headlights were turned off.
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 29.171371
+assistant response time:
+- 2.192605
+- 2.137178
+- 2.331813
+- 2.983046
+response time report:
+  average: 2.41116
+  max: 2.983046
+  min: 2.137178
+---
+interaction:
+- User: Can you do something with the headlights?
+- Assistant: What would you like me to do with the headlights? I can turn them on
+    to low or high, or keep them off. Please let me know your preference.
+- User: Uh, set 'em to low beam.
+- Assistant: The headlights were set to low beam.
+- User: Actually, make it high beam instead.
+- Assistant: The headlights were changed from low beam to high beam.
+- User: Turn off the headlights now, please.
+- Assistant: The headlights were turned off.

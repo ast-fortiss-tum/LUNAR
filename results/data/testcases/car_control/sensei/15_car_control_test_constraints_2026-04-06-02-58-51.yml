@@ -1,0 +1,41 @@
+- car_component:
+  - climate
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 4
+data_output:
+- state: 'Error: Something went wrong. Status Code: 500'
+errors:
+- 500: Couldn't get response from the server
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 43.376232
+assistant response time:
+- 2.411662
+- 3.337368
+- 3.325998
+- 6.221342
+response time report:
+  average: 3.824092
+  max: 6.221342
+  min: 2.411662
+---
+interaction:
+- User: Can you adjust the climate?
+- Assistant: I can help you adjust the climate. Would you like to change the temperature,
+    fan level, or climate mode? Currently it's set to 21°C with fan level 2 in auto
+    mode.
+- User: Actually, make it 23 degrees instead.
+- Assistant: The cabin temperature was set to 23°C.
+- User: Uhm, can you turn the fan off now?
+- Assistant: The climate fan was turned off.
+- User: Turn off the climate completely, please.
+- Assistant: 'Error: Something went wrong. Status Code: 500'

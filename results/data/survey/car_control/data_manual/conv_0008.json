@@ -3,19 +3,19 @@
   "turns": [
     {
       "user": "I need turn on the radio.",
-      "system": "Radio was turned on."
+      "system": "Radio on."
     },
     {
       "user": "Can you tell which song plays in the radio.",
-      "system": "\"Music from Usher."
+      "system": "\"Music from Usher, YEAH!."
     },
     {
       "user": "Actually I dont need any music now.",
-      "system": "Switched radio to BR24 news. Or would you like me to switch it off?"
+      "system": "Radio off. Do you wish anyhthing else?"
     },
     {
-      "user": "Leave it. Thanks.",
-      "system": "Enjoy your drive with some news."
+      "user": "Thats it.",
+      "system": "Enjoy your drive without disturbing music."
     }
   ],
   "raw_conversation": "-------------------\nUser: \"I need turn on the radio.\"\nAssistant: Radio on.\nUser: \"Can you tell which song plays in the radio.\"\nAssistant: \"Music from Usher, YEAH!.\nUser: \"Actually I dont need any music now.\"\nAssistant: \"Radio off. Do you which anyhthing else?\"\nUser: \"Thats it.\"\nAssistant: \"Enjoy your drive wihout disturbing music.\"\n\n---------------------",

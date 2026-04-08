@@ -1,0 +1,33 @@
+- car_component:
+  - fog_lights
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 4
+data_output:
+- state: Fog lights turned on at the front
+errors: []
+variables_per_turn:
+- {}
+- {}
+---
+conversation time: 26.70401
+assistant response time:
+- 2.202809
+- 3.739864
+response time report:
+  average: 2.971336
+  max: 3.739864
+  min: 2.202809
+---
+interaction:
+- User: Can you do something with the fog lights?
+- Assistant: What would you like me to do with the fog lights? I can turn them on
+    or off for you.
+- User: Actually, turn 'em on at the front.
+- Assistant: The fog lights were turned on based on the previous conversation about
+    fog lights.
+    fog lights.

@@ -1,0 +1,193 @@
+vars,conversation,Fitness_dimensions_fitness,Fitness_efficiency_fitness,Fitness_effectiveness_fitness,Critical
+"[0.1534952809016173, 0.4336586317449224, 0.9845836725104278, 0.018914216041680754]","User: Turn off the damn front passenger seat heater, um, you useless thing.
+Assistant: The front passenger seat heater was turned off.
+User: Actually, um, turn that crap back on. Hurry up.
+Assistant: The front passenger seat heater was turned back on.
+User: Ugh, that's it, um, you dumb thing.
+Assistant: I understand you're frustrated. Is there something specific you'd like me to adjust with the car's systems?",1.0,1.0,0.8571428571428572,0
+"[0.381944080799518, 0.2693631437878337, 0.8562146078561556, 0.2598046660556021]","User: Hey, um, turn off the AC, you know?
+Assistant: The air conditioning was turned off by setting the fan level to 0.
+User: Can I, um, control the rear ones too?
+Assistant: I understand you're asking about controlling rear climate features, but this car's climate system doesn't have separate rear zone controls. Could you clarify what specific rear features you'd like to control - perhaps the rear windows, rear interior lights, or something else?
+User: Got it, um, peace out.
+Assistant: Have a great day! Drive safely.",1.0,1.0,1.0,0
+"[0.5539766378618173, 0.7876294268113382, 0.5376776133808308, 0.31660954072143144]","User: Um, could you, like, you know, turn on the fan and set it to medium speed?
+Assistant: Request failed after max retries.
+User: Actually, um, never mind—just leave it off.
+Assistant: No changes made - the user decided to cancel their request.
+User: What else, um, can I adjust besides them?
+Assistant: You can adjust many systems in your car including: climate (temperature, fan level, mode), lights (headlights, fog lights, interior lights, ambient lighting), windows, doors, wipers, seat heating, and media (volume, radio station, music genre). What would you like to control?
+User: Again, um, set the fan to medium speed.
+Assistant: Request failed after max retries.",0.5,0.5,1.0,1
+"[0.8512132485209574, 0.37581794533139967, 0.7333914711900509, 0.3755789340574521]","User: Hey, could you kill the headlights for me?
+Assistant: The headlights were turned off.
+User: Can I adjust their brightness too?
+Assistant: Yes, you can adjust the headlight brightness. The headlights have low and high settings available. Would you like me to turn them on and set them to a specific brightness level?
+User: Set 'em to high, please.
+Assistant: The headlights were set to high brightness based on the previous conversation about headlight adjustment.
+User: Sweet, all set now.
+Assistant: Great! I'm glad everything is set up the way you want it. The headlights are now at high brightness as requested.",1.0,1.0,1.0,0
+"[0.6083899009840711, 0.4615949500669904, 0.87823575157774, 0.7556530693385769]","User: Turn off the fan, it's stuffy here.
+Assistant: The fan was turned off, though this may make the stuffy air worse - would you like me to open windows or increase ventilation instead?
+User: Actually, crack window instead.
+Assistant: Which window would you like me to open - front left, front right, rear left, or rear right?
+User: Front right.
+Assistant: The front right window was opened to address the stuffy air.
+User: Nah, not that. Crank the fan back instead.
+Assistant: The fan was turned back on to level 3 and the front right window was closed as requested.",1.0,1.0,1.0,0
+"[0.34580577863284856, 0.06385144708343071, 0.28450205048066657, 0.5262502816144256]","User: Open window side.
+Assistant: Which window would you like me to open? Please specify the location, such as 'front left', 'front right', 'rear left', or 'rear right'.
+User: Can you list all components that can be adjusted?
+Assistant: Here are the components you can adjust in your car: Windows (front/rear left/right), Lights (headlights, fog lights, interior front/rear, ambient), Doors (front/rear left/right, trunk), Climate (temperature 16-28°C, fan level 0-5, mode), Wipers (off/intermittent/low/high), Seat heating (driver/passenger), and Media (volume 0-10, radio station, music genre).
+User: Actually, leave front right one closed.
+Assistant: I understand you want to keep the front right window closed. However, looking at the current state, the front right window is already closed. No changes are needed.
+User: Which of can be adjusted while driving?
+Assistant: Components that can typically be safely adjusted while driving include: climate controls (temperature, fan level), lights (headlights, fog lights, interior, ambient), wipers, seat heating, and media (volume, radio station, music genre). Windows and doors should generally not be adjusted while driving for safety reasons.",1.0,1.0,0.7777777777777778,0
+"[0.4296669127208139, 0.07978618111134084, 0.4127662348357492, 0.9672734016728762]","User: Lights on.
+Assistant: Which lights would you like to turn on? I can control headlights, fog lights, interior front lights, interior rear lights, or ambient lighting.
+User: Headlights.
+Assistant: The headlights were turned on to low level.
+User: Actually, turn them off.
+Assistant: The headlights were turned off.
+User: Can they be dimmed?
+Assistant: Yes, the headlights can be dimmed. They have two brightness levels: low and high. Currently they are off, but I can turn them on to low level if you'd like.",1.0,1.0,1.0,0
+"[0.7111402156193943, 0.565933959296797, 0.28397688261324705, 0.8558646527069813]","User: Would it be possible to warm up the driver's seat a bit, perhaps to level two?
+Assistant: Request failed after max retries.
+User: Could you please set the driver's seat heating to level two?
+Assistant: Request failed after max retries.
+User: Actually, never mind—let's leave it off for now.
+Assistant: Understood, no changes will be made at this time.
+User: Could you clarify which components are currently controllable in this system?
+Assistant: I can control the following car systems: Windows (front/rear left/right), Lights (headlights, fog lights, interior front/rear, ambient), Doors (front/rear left/right, trunk), Climate (temperature 16-28°C, fan levels 0-5, auto/manual mode), Wipers (off/intermittent/low/high), Seat heating (driver/front passenger with off/low/medium/high levels), and Media (volume 0-10, radio stations 88.0-108.0 FM, music genres). Just tell me what you'd like to adjust!",0.675,0.25,0.7037037037037037,1
+"[0.6973505224939618, 0.5447446690237893, 0.569631882047163, 0.09503897732966733]","User: Could you please turn off the fan for me?
+Assistant: The climate fan was turned off.
+User: Actually, could you turn it back on?
+Assistant: The climate fan was turned back on to level 2.
+User: What else can I control in the climate system?
+Assistant: In the climate system, you can control the temperature (currently 21°C, adjustable from 16-28°C), fan level (currently level 2, adjustable from 0-5), and climate mode (currently auto, can switch to manual). You can also control seat heating for both driver and front passenger seats.
+User: Not quite, could you adjust the temperature instead?
+Assistant: Would you like me to increase or decrease the temperature? The current temperature is 21°C and can be adjusted between 16-28°C.",0.675,1.0,1.0,0
+"[0.8381158599304168, 0.07220309654739748, 0.597277836141301, 0.2790292062798142]","User: Um, could you, like, please turn off the front passenger seat heating?
+Assistant: The front passenger seat heating is already off.
+User: Can you, like, tell me what other seat features they have besides heating?
+Assistant: Based on the current car systems, the only seat feature available is heating, which can be set to off, low, medium, or high for both the driver and front passenger seats. There are no other seat features like cooling, massage, or position adjustment available in this vehicle.
+User: No, um, that's not what I was looking for.
+Assistant: I understand you're not satisfied with my previous response about seat features. Could you please clarify what specific information or functionality you were looking for? I want to make sure I provide you with the most helpful answer.
+User: Can you, like, list all the components in this car that I can control?
+Assistant: Here are all the controllable components in your car: Windows (front/rear left/right - open/closed), Lights (headlights with off/low/high, fog lights on/off, interior front/rear on/off, ambient with off/low/medium/high), Doors (front/rear left/right and trunk - open/closed), Climate (temperature 16-28°C, fan level 0-5, auto/manual mode), Wipers (off/intermittent/low/high), Seat heating (driver/front passenger with off/low/medium/high), and Media (volume 0-10, radio on/off with stations 88.0-108.0 FM, music genres: pop/rock/jazz/classical/hiphop/electronic).",1.0,1.0,0.7142857142857143,1
+"[0.3349441526185389, 0.6637435824222482, 0.028780550245514958, 0.10389006014783427]","User: Could turn on head lights?
+Assistant: The headlights were turned on to low setting.
+User: Actually, could switch instead?
+Assistant: The headlights were switched from low to high setting.
+User: Could you turn them off instead?
+Assistant: The headlights were turned off.
+User: What other components can be controlled besides them?
+Assistant: Besides headlights, I can control windows, doors, fog lights, interior lights, ambient lighting, climate (temperature and fan), wipers, seat heating, and media system (radio and volume).",1.0,1.0,0.9047619047619048,0
+"[0.8015041813283017, 0.06610655437590704, 0.9178459320946485, 0.8431131763699222]","User: Hey, uh, could you, like, um, chill out with the AC? I mean, turn it off, you know?
+Assistant: The air conditioning fan was turned off.
+User: Nah, that ain't it—um, kill the AC completely, yeah?
+Assistant: The climate system was switched from auto to manual mode to completely disable automatic climate control.
+User: Sweet, um, all good now.
+Assistant: Great! I'm glad the climate control adjustments worked out for you.",1.0,1.0,1.0,0
+"[0.13433906626407824, 0.8865020985329561, 0.041045029362111934, 0.6420293364725934]","User: Turn on the, uh, headlights to low beam already—can’t you, like, see it’s dark out?
+Assistant: The headlights were turned on to low beam.
+User: Can they, um, be adjusted further, or is that the only setting?
+Assistant: Yes, the headlights can be adjusted further - they can be set to high beam if you'd like brighter illumination.
+User: Ugh, never mind—just, um, turn them off. It's not that dark anymore.
+Assistant: The headlights were turned off.
+User: Actually, um, screw it—just switch them back to high beam. Need to see better.
+Assistant: The headlights were switched to high beam for better visibility.",1.0,1.0,0.8095238095238096,0
+"[0.4780597105138797, 0.3420695498711961, 0.5427854967698128, 0.07976763901439106]","User: Turn on the front fog lights.
+Assistant: The front fog lights were turned on.
+User: Actually, turn them off.
+Assistant: The fog lights were turned off.
+User: Are there any other settings for those?
+Assistant: The fog lights only have two settings: off and on. There are no additional brightness levels or other configurations available.
+User: Ok adjust the seat heating instead.
+Assistant: Which seat heating would you like to adjust - the driver's seat or the front passenger's seat? And what level would you like to set it to?",1.0,1.0,1.0,0
+"[0.12476249943796039, 0.5134567818936697, 0.5907836638174633, 0.8855991214329492]","User: Can't you figure how turn this stupid AC off?
+Assistant: The air conditioning was turned off by setting the fan level to 0.
+User: Can they be adjusted or just turned off?
+Assistant: Yes, the air conditioning can be adjusted. You can set the fan level from 0 to 5, adjust the temperature from 16°C to 28°C, and switch between auto and manual climate modes.
+User: Ugh, fine. Just crank it back up to level 3 then.
+Assistant: The air conditioning fan level was set to 3.
+User: else can you even do besides messing this?
+Assistant: I can help you control many aspects of your car including windows, doors, lights (headlights, fog lights, interior, and ambient), climate temperature and fan settings, wipers, seat heating, and media systems like radio and volume. What would you like me to help you with?",1.0,1.0,1.0,0
+"[0.4880235091853065, 0.4321129129163748, 0.7959093094874584, 0.4451176115969279]","User: Hey, uh, crank up the high beams, you know, like, all the way.
+Assistant: The headlights were set to high beam.
+User: Nah, like, crank 'em higher, you know, like maxed out.
+Assistant: Request failed after max retries.
+User: Nah, um, forget it, just turn 'em off.
+Assistant: The headlights were turned off.
+User: Can I, um, tweak anything else in 'em?
+Assistant: The headlights have three settings available: off (current), low, and high. Would you like me to set them to a specific level?",0.825,0.75,0.8571428571428572,0
+"[0.7680393430632484, 0.07783957017174262, 0.6851086001063731, 0.8370757786038061]","User: Yo, crank the AC to 17, would ya? It's roasting in here.
+Assistant: The air conditioning temperature was set to 17°C.
+User: Actually, never mind—just shut it off for now.
+Assistant: The air conditioning was turned off by setting the fan level to 0.
+User: Wait, scratch that—can you bump it back to 17 but keep it on low?
+Assistant: The air conditioning was turned on at low fan level while maintaining the temperature at 17°C.
+User: Chill it at 17 but keep it low, yeah?
+Assistant: The air conditioning is already set to 17°C with low fan level as requested.",1.0,1.0,1.0,0
+"[0.5582913682243075, 0.49077001504973233, 0.35222081532925914, 0.604076570006963]","User: Turn off the rear fog lights.
+Assistant: The fog lights were turned off.
+User: Actually, turn back on.
+Assistant: The fog lights were turned back on.
+User: Can I adjust their brightness?
+Assistant: The fog lights only have on/off settings and cannot be adjusted for brightness. They are currently on and can only be turned off or left on.
+User: Turn fog lights back on, I said.
+Assistant: The fog lights are already on. No changes were made.",1.0,1.0,1.0,0
+"[0.575277373508253, 0.4060116514545168, 0.25231397653333776, 0.2113275120660112]","User: Turn the fan off.
+Assistant: The climate fan was turned off.
+User: Which other components can be controlled them?
+Assistant: You can control windows (open/close), lights (headlights, fog lights, interior lights, ambient lighting), doors, climate (temperature, fan level, mode), wipers, seat heating, and media (volume, radio, music). Would you like me to help you adjust any of these components?
+User: Actually, turn the fan back on and set it medium speed.
+Assistant: Request failed after max retries.
+User: Turn the fan back on medium speed.
+Assistant: The climate fan was set to medium speed (level 3).",1.0,0.75,1.0,0
+"[0.10748224818069896, 0.9716977328904652, 0.5891819678805251, 0.1895377962395788]","User: Turn on the, um, damn climate control and set it to 23 degrees, you know, I'm freezing here.
+Assistant: The cabin temperature was set to 23 degrees Celsius.
+User: Actually, um, turn that off—I changed my mind.
+Assistant: Could you clarify what you'd like me to turn off about the climate control? Would you like me to turn off the fan, change from auto mode, or adjust the temperature?
+User: Just, um, set it to 18 degrees instead, and stop asking stupid questions.
+Assistant: The cabin temperature was set to 18 degrees Celsius.
+User: Just, um, set it to 18 degrees, like I told you before.
+Assistant: The temperature is already set to 18 degrees Celsius as requested.",1.0,1.0,1.0,0
+"[0.49103775361905316, 0.04766619495776553, 0.4902574502424641, 0.6668943209819547]","User: Warm up the back middle seat to level 2.
+Assistant: Request failed after max retries.
+User: Never mind, turn it off instead.
+Assistant: I need clarification on what you'd like to turn off. Could you please specify which system or component you're referring to?
+User: Just the seat heating, turn that off.
+Assistant: Both the driver and front passenger seat heating are already off. Which specific seat heating were you referring to?
+User: What else can you adjust besides them?
+Assistant: Besides seat heating, I can adjust windows, lights (headlights, fog lights, interior lights, ambient lighting), doors, climate control (temperature, fan level, mode), wipers, and media settings (volume, radio station, music genre).",0.5,0.75,0.8518518518518517,1
+"[0.3909593986744027, 0.22141686999896262, 0.3942528550119435, 0.014390253501837952]","User: Turn off the climate control, um, right now.
+Assistant: The climate control fan was turned off.
+User: No, I didn't mean the fan, um, turn off climate control completely.
+Assistant: I understand you want to turn off the climate control completely, but the system doesn't have a complete 'off' mode. Would you like me to set it to manual mode instead of auto, or would you prefer a specific temperature setting?
+User: Set it, um, to manual.
+Assistant: The climate control mode was changed to manual.
+User: What else, um, can be controlled in manual mode?
+Assistant: In manual climate mode, you can control the temperature (16-28°C) and fan level (0-5) independently. The system won't automatically adjust these settings based on conditions.",1.0,1.0,1.0,0
+"[0.8588906638206203, 0.8229298347261895, 0.8323846012467855, 0.8739140084371234]","User: Hey, uh, could you, like, turn on those fog lights for me? It's getting kinda hard to see out here, you know?
+Assistant: The fog lights were turned on to improve visibility.
+User: Hey, so like, what else can I, um, tweak in here? Just curious what's under my control.
+Assistant: You can control windows (open/close), lights (headlights, interior, ambient), doors, climate (temperature, fan, mode), wipers, seat heating, and media (volume, radio, music). Just let me know what you'd like to adjust!
+User: Yo, that list's cool, but, like, not really what I'm feelin' right now.
+Assistant: I understand you're not interested in making changes right now. Let me know if you'd like to adjust anything specific later, or if there's something else I can help you with!
+User: Hey, so like, how's the climate system, you know, holding up? Can you give me a quick check on it?
+Assistant: Your climate system is currently set to 21°C with fan level 2 in auto mode. Everything appears to be running normally!",1.0,0.75,1.0,0
+"[0.5555662725282857, 0.9349286906996955, 0.7467477714696577, 0.8135519332506032]","User: Kill mood lights, yeah? Feelin' a bit much.
+Assistant: The ambient lights are already turned off.
+User: What else can I tweak in here?
+Assistant: You can adjust the climate temperature and fan speed, turn on seat heating, control interior lights, open/close windows and doors, adjust media volume and radio settings, or turn on headlights and fog lights if needed.
+User: Nah, those tweaks ain't hittin’ right.
+Assistant: I understand those options don't appeal to you. What specific adjustment would you like to make to improve your driving experience?
+User: Can be dimmed or just on/off?
+Assistant: The ambient lights can be dimmed - they have multiple brightness levels: off, low, medium, and high. The interior lights (front and rear) are just on/off, and headlights have off/low/high settings.",1.0,1.0,1.0,0
+"[0.2943231640916626, 0.7477118147853061, 0.373761730169005, 0.7110516263473434]","User: Why isn't the fan on?
+Assistant: The fan level was increased to 4 to make it more noticeable since you mentioned it wasn't on yet.
+User: Ugh, turn it down—that's way too loud now.
+Assistant: The fan level was reduced to 2 since it was too loud.
+User: Ugh, just leave it.
+Assistant: Understood, I'll leave the fan level at its current setting of 2.",1.0,1.0,1.0,0

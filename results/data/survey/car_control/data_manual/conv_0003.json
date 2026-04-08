@@ -3,19 +3,19 @@
   "turns": [
     {
       "user": "Hey, can you please open the trunk?",
-      "system": "This function is not supported."
+      "system": "The function opening the trunk is not supported."
     },
     {
       "user": "Please open my trunk.",
-      "system": "This function is not supported. I can, however, open windows for you."
+      "system": "Can you specify what you would like to open?"
     },
     {
       "user": "I need please to open the trunk.",
-      "system": "This function is not supported. May I assist you otherwise?"
+      "system": "This function is not supported."
     },
     {
       "user": "Nevermind.\nTurn on the fog lights.",
-      "system": "Please repeat your request."
+      "system": "I understand you request of changing the fog lights."
     },
     {
       "user": "Turn them on.",

@@ -7,11 +7,11 @@
     },
     {
       "user": "Increase the temperature to 22 degrees, I am freezing.",
-      "system": "I can currently not set the temperature. "
+      "system": "Can you please specify what you want to change?"
     },
     {
       "user": "Forget it.",
-      "system": "Is there anything else I can help you with?"
+      "system": "Is there anything else I can help you with? It is always my pleasure to assist you."
     }
   ],
   "raw_conversation": "-----------\nU: Hey can you increase the temperature so that I dont have to freeze?\nS: Sorry, something went wrong.\nU: Increase the temperature to 22 degrees, I am freezing.\nS: Can you please specify what you want to change?\nU: Forget it.\nS: Have a good day.\n--------------------",

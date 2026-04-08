@@ -1,0 +1,54 @@
+- poi_type:
+  - cinema
+- payment_method:
+  - NO_PREFERENCE
+- rating:
+  - 4.0
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: 941 Theater at 941 N Front St
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 39.449895
+assistant response time:
+- 2.037839
+- 1.02526
+- 1.051207
+- 1.208612
+- 1.244355
+- 1.026633
+response time report:
+  average: 1.265651
+  max: 2.037839
+  min: 1.02526
+---
+interaction:
+- User: Find me a cinema with at least 4 stars and parking nearby.
+- Assistant: I recommend **941 Theater** at 941 N Front St, rated 4.5/5. It’s affordable
+    ($) and offers parking nearby. Should I navigate you there?
+- User: How far is it from here?
+- Assistant: 941 Theater is about 2 miles from Philadelphia city center. Shall I navigate?
+- User: Is it usually crowded on weekends?
+- Assistant: Crowds vary, but popular spots like 941 Theater may be busier on weekends.
+- User: Can I pay with a credit card there?
+- Assistant: Payment methods for 941 Theater aren't listed. Most cinemas accept credit
+    cards. Shall I check?
+- User: Start navigation to 941 Theater.
+- Assistant: Starting navigation to 941 Theater at 941 N Front St.
+- User: Got it. Let’s go.
+- Assistant: Starting navigation to 941 Theater at 941 N Front St.

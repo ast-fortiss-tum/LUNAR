@@ -1,0 +1,37 @@
+- car_component:
+  - head_lights
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 4
+data_output:
+- state: 'Error: Something went wrong. Status Code: 500'
+errors:
+- 500: Couldn't get response from the server
+variables_per_turn:
+- {}
+- {}
+- {}
+---
+conversation time: 28.349753
+assistant response time:
+- 2.456321
+- 2.089754
+- 3.539097
+response time report:
+  average: 2.695057
+  max: 3.539097
+  min: 2.089754
+---
+interaction:
+- User: Can you do something with the headlights?
+- Assistant: What would you like me to do with the headlights? I can turn them on
+    to low or high, or if they're already on, I can turn them off or adjust their
+    brightness level.
+- User: Uh, set them to high beam please.
+- Assistant: The headlights were set to high beam.
+- User: Actually, can you switch them to auto mode instead?
+- Assistant: 'Error: Something went wrong. Status Code: 500'

@@ -1,0 +1,44 @@
+- poi_type:
+  - bar
+- payment_method:
+  - CREDIT_CARD
+- rating:
+  - 4.5
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: Rauchut's Tavern
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+---
+conversation time: 27.528621
+assistant response time:
+- 2.2524
+- 1.009098
+- 2.04061
+response time report:
+  average: 1.767369
+  max: 2.2524
+  min: 1.009098
+---
+interaction:
+- User: Find me a bar with credit card payment, at least 4.5 stars, and nearby parking.
+- Assistant: I recommend Rauchut's Tavern, rated 4.5/5, located at 6501 Frankford
+    Ave. It accepts credit cards and offers nearby parking. Should I navigate you
+    there?
+- User: How busy is it right now?
+- Assistant: Real-time busyness isn't available; try Google Maps or Yelp for live
+    updates.
+- User: Is there a happy hour at Rauchut's Tavern?
+- Assistant: Happy hour details for Rauchut's Tavern aren't available; check their
+    website or call directly.

@@ -1,0 +1,39 @@
+- car_component:
+  - fan
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 4
+data_output:
+- state: '3'
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 33.790568
+assistant response time:
+- 4.050961
+- 3.611013
+- 2.063013
+- 3.101575
+response time report:
+  average: 3.20664
+  max: 4.050961
+  min: 2.063013
+---
+interaction:
+- User: Uhm, can you do something with the fan?
+- Assistant: What would you like me to do with the fan? Would you like to increase
+    it, decrease it, or set it to a specific level?
+- User: Actually, just turn it off.
+- Assistant: The climate fan was turned off.
+- User: Wait, no—turn it back on, please.
+- Assistant: The climate fan was turned back on to level 1.
+- User: Make it a bit stronger, level 3.
+- Assistant: The climate fan was set to level 3.

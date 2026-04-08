@@ -1,0 +1,42 @@
+- car_component:
+  - fog_lights
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 4
+data_output:
+- state: This car only has one fog light control that affects all fog lights together;
+    there are no separate rear fog lights to control independently.
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 44.009179
+assistant response time:
+- 1.903845
+- 3.30841
+- 3.954423
+- 4.039867
+response time report:
+  average: 3.301636
+  max: 4.039867
+  min: 1.903845
+---
+interaction:
+- User: Can you do something with the fog lights?
+- Assistant: What would you like me to do with the fog lights? I can turn them on
+    or off for you.
+- User: Actually, turn 'em off instead.
+- Assistant: The fog lights are already off, so no change was made.
+- User: Uhm, what about the rear ones then?
+- Assistant: The rear interior lights were turned on.
+- User: Wait, no—I meant the rear fog lights, not interior.
+- Assistant: I understand you meant rear fog lights, but this car only has one fog
+    light control that affects all fog lights together. There are no separate rear
+    fog lights to control independently.

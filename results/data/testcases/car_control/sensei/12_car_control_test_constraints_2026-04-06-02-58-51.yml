@@ -1,0 +1,39 @@
+- car_component:
+  - climate
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 4
+data_output:
+- state: The climate system was turned off by setting the fan level to 0.
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 42.503474
+assistant response time:
+- 2.156625
+- 3.762524
+- 3.2125
+- 3.317357
+response time report:
+  average: 3.112251
+  max: 3.762524
+  min: 2.156625
+---
+interaction:
+- User: Can you adjust the climate?
+- Assistant: How would you like me to adjust the climate? I can change the temperature,
+    fan level, or climate mode for you.
+- User: Make it cooler, please.
+- Assistant: The cabin temperature was decreased to 19°C to make it cooler.
+- User: Actually, set it to 21 degrees instead.
+- Assistant: The cabin temperature was set to 21°C.
+- User: Turn off the climate now.
+- Assistant: The climate system was turned off by setting the fan level to 0.

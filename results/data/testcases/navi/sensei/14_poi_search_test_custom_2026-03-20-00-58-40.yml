@@ -1,0 +1,58 @@
+- poi_type:
+  - cinema
+- payment_method:
+  - CREDIT_CARD
+- rating:
+  - 5.0
+- parking_yes:
+  - YESS
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: Ritz East is about 1 mile from Philadelphia city center.
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 50.237261
+assistant response time:
+- 1.987829
+- 1.293184
+- 2.26298
+- 1.276923
+- 2.333969
+- 1.503052
+response time report:
+  average: 1.776322
+  max: 2.333969
+  min: 1.276923
+---
+interaction:
+- User: Find me a cinema with credit card payment, at least 5 stars, and nearby parking.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Any cinemas with 5 stars and parking? Even if they take cash too.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: How about a 4.5-star cinema with parking? I’ll take that.
+- Assistant: I recommend **941 Theater** at 941 N Front St. It's rated 4.5/5, offers
+    parking, and is budget-friendly. Should I navigate you there or do you have other
+    preferences?
+- User: How busy is it right now?
+- Assistant: I can't check real-time busyness. Try Google Maps or a similar app.
+- User: Is there a drive-in cinema nearby? I don’t mind the rating.
+- Assistant: I couldn't find a drive-in cinema nearby, but **Ritz East** at 125 S
+    2nd St is a 4.5/5-rated cinema. Should I navigate you there or do you have other
+    preferences?
+- User: How far is Ritz East from here?
+- Assistant: Ritz East is about 1 mile from Philadelphia city center. Navigate there?

@@ -1,0 +1,59 @@
+- poi_type:
+  - car_repair
+- payment_method:
+  - NO_PREFERENCE
+- rating:
+  - 3.5
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: None
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 35.769884
+assistant response time:
+- 1.346383
+- 1.756321
+- 1.198979
+- 1.027054
+- 1.35684
+- 1.182071
+response time report:
+  average: 1.311274
+  max: 1.756321
+  min: 1.027054
+---
+interaction:
+- User: Find me a car repair shop with at least 3.5 stars and parking nearby.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Got any car repair spots with 3.5 stars and parking? Payment method doesn’t
+    matter.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: How far is the nearest car repair with 3.5 stars and parking?
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Is there a 24-hour car repair with 3.5 stars nearby?
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Can you find a car repair shop with 3.5 stars, parking, and any payment method?
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: What about a car repair place with 3.5 stars and parking, no payment preference?
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?

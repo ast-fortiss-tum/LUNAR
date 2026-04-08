@@ -1,0 +1,40 @@
+- car_component:
+  - climate
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 4
+data_output:
+- state: '20'
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 43.059347
+assistant response time:
+- 2.056057
+- 3.617869
+- 4.363315
+- 2.991607
+response time report:
+  average: 3.257212
+  max: 4.363315
+  min: 2.056057
+---
+interaction:
+- User: Can you adjust the climate?
+- Assistant: How would you like to adjust the climate? Would you like to change the
+    temperature, fan level, or switch between auto and manual mode?
+- User: Actually, just turn it off for now.
+- Assistant: The climate system was turned off by setting the fan level to 0.
+- User: Uhm, can you turn it back on but set to 22 degrees?
+- Assistant: The climate system was turned back on and the temperature was set to
+    22 degrees.
+- User: Make it a bit cooler, like 20 degrees.
+- Assistant: The cabin temperature was set to 20 degrees Celsius.

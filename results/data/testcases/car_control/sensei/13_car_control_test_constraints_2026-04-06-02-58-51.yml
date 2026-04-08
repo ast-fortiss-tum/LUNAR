@@ -1,0 +1,39 @@
+- car_component:
+  - seat_heating
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 4
+data_output:
+- state: driver's seat heating set to low
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 33.4702
+assistant response time:
+- 4.053403
+- 3.053663
+- 2.173062
+- 3.827431
+response time report:
+  average: 3.276889
+  max: 4.053403
+  min: 2.173062
+---
+interaction:
+- User: Can you adjust the seat heating?
+- Assistant: Which seat would you like to adjust the heating for - driver or front
+    passenger? And what level would you prefer - low, medium, or high?
+- User: Uh, make it high for the driver.
+- Assistant: The driver's seat heating was set to high.
+- User: Actually, can you lower it to medium instead?
+- Assistant: The driver's seat heating was lowered to medium.
+- User: Turn it down a bit more, please.
+- Assistant: The driver's seat heating was lowered from medium to low.

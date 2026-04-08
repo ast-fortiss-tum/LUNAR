@@ -1,0 +1,36 @@
+- car_component:
+  - windows
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 4
+data_output:
+- state: The front passenger window was opened.
+errors:
+- 500: Couldn't get response from the server
+variables_per_turn:
+- {}
+- {}
+- {}
+---
+conversation time: 34.29549
+assistant response time:
+- 4.263415
+- 2.458716
+- 3.943321
+response time report:
+  average: 3.55515
+  max: 4.263415
+  min: 2.458716
+---
+interaction:
+- User: Can you do something with the windows?
+- Assistant: Could you please specify which windows you'd like me to open or what
+    specific action you want me to perform with the windows?
+- User: Uh, the front passenger one. Open it a bit.
+- Assistant: The front passenger window was opened.
+- User: Actually, can you close it halfway instead?
+- Assistant: 'Error: Something went wrong. Status Code: 500'

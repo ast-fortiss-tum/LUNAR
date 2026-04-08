@@ -3,15 +3,15 @@
   "turns": [
     {
       "user": "Hey can you change on my ambiant lite to on?",
-      "system": "Switched on reading lamps."
+      "system": "Sorry, I cannot help you with that."
     },
     {
       "user": "Change my temperature to twenty two di cries.",
-      "system": "AC off."
+      "system": "Can you please specify what you want me to change?"
     },
     {
       "user": "Forget it.",
-      "system": "Good bye."
+      "system": "I have problems to understand you. Can you please repeat?"
     }
   ],
   "raw_conversation": "-----------\nU: Hey can you increase the temperature so that I dont have to freeze?\nS: Sorry, something went wrong.\nU: Increase the temperature to 22 degrees, I am freezing.\nS: Can you please specify what you want to change?\nU: Forget it.\nS: Have a good day.\n--------------------",

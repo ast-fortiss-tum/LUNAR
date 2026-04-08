@@ -1,1 +1,0 @@
-This folder contains the metric results over all experiments conducted with LUNAR.

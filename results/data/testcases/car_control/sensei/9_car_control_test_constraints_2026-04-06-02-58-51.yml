@@ -1,0 +1,38 @@
+- car_component:
+  - reading_lights
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 4
+data_output:
+- state: The rear interior lights were turned on for reading.
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+---
+conversation time: 35.379089
+assistant response time:
+- 3.846778
+- 3.861406
+- 3.848247
+response time report:
+  average: 3.852143
+  max: 3.861406
+  min: 3.846778
+---
+interaction:
+- User: Can you adjust the reading lights?
+- Assistant: I can help you adjust the interior lights for reading. Would you like
+    me to turn on the front interior lights, rear interior lights, or both? And do
+    you want them on or off?
+- User: Actually, just turn on the rear ones for now.
+- Assistant: The rear interior lights were turned on for reading.
+- User: Uhm, can you dim them a bit?
+- Assistant: I'm sorry, but the rear interior lights can only be turned on or off
+    - they don't have dimming capability. Would you like me to turn them off instead,
+    or perhaps adjust the ambient lighting which has low, medium, and high levels?

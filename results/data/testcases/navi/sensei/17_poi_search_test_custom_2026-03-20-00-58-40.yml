@@ -1,0 +1,48 @@
+- poi_type:
+  - restaurant
+- payment_method:
+  - CREDIT_CARD
+- rating:
+  - 4.0
+- parking_yes:
+  - YESS
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: Saloon Restaurant
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 37.361437
+assistant response time:
+- 1.950786
+- 1.773597
+- 1.237539
+- 0.947959
+response time report:
+  average: 1.47747
+  max: 1.950786
+  min: 0.947959
+---
+interaction:
+- User: Find me a restaurant with credit card payment, at least 4 stars, and nearby
+    parking.
+- Assistant: 'I recommend Saloon Restaurant, rated 4.5/5, offering Chinese and Italian
+    cuisine at 750 S 7th St. Price: $$$. Should I navigate you there?'
+- User: How far is it from here?
+- Assistant: Saloon Restaurant is about 1 mile from Philadelphia city center. Shall
+    I navigate?
+- User: Is it usually crowded there?
+- Assistant: Crowd levels at Saloon Restaurant vary; evenings and weekends may be
+    busier.
+- User: Start navigation now.
+- Assistant: Starting navigation to Saloon Restaurant at 750 S 7th St.

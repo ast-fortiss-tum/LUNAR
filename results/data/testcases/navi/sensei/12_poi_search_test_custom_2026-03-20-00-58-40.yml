@@ -1,0 +1,41 @@
+- poi_type:
+  - cinema
+- payment_method:
+  - NO_PREFERENCE
+- rating:
+  - 4.0
+- parking_yes:
+  - YESS
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: 941 Theater
+errors: []
+variables_per_turn:
+- {}
+- {}
+---
+conversation time: 26.022545
+assistant response time:
+- 1.714869
+- 1.023987
+response time report:
+  average: 1.369428
+  max: 1.714869
+  min: 1.023987
+---
+interaction:
+- User: Find me a cinema with at least 4 stars and parking nearby—payment method doesn’t
+    matter.
+- Assistant: I recommend 941 Theater, rated 4.5/5, located at 941 N Front St. It has
+    parking nearby. Should I navigate you there?
+- User: How far is it from here?
+- Assistant: '941 Theater: ~2 miles, The Rotunda: ~3 miles, Prince Music Theater:
+    ~1 mile. Navigate?'
+- Assistant: '941 Theater: ~2 miles, The Rotunda: ~3 miles, Prince Music Theater:
+    ~1 mile. Navigate?'

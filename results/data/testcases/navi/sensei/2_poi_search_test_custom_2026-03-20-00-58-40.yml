@@ -1,0 +1,57 @@
+- poi_type:
+  - cafe
+- payment_method:
+  - CREDIT_CARD
+- rating:
+  - 4.0
+- parking_yes:
+  - YESS
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: Good Karma Cafe at 2319 Walnut St, rated 4.5/5, offers coffee, tea, nearby
+    parking, and vegan options like plant-based milk and snacks.
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 41.906335
+assistant response time:
+- 2.802937
+- 0.958155
+- 1.120817
+- 1.00091
+- 1.197208
+- 1.105825
+response time report:
+  average: 1.364308
+  max: 2.802937
+  min: 0.958155
+---
+interaction:
+- User: Find me a cafe with credit card payment, at least 4 stars, and nearby parking.
+- Assistant: I recommend Good Karma Cafe at 2319 Walnut St, rated 4.5/5. It offers
+    coffee, tea, and nearby parking. Should I navigate you there?
+- User: How far is it from here?
+- Assistant: Good Karma Cafe at 2319 Walnut St is about 1 mile from city center.
+- User: Is it usually crowded around this time?
+- Assistant: Crowds vary, but cafes near city center are busier during peak hours
+    (8-10 AM).
+- User: Do they have vegan options?
+- Assistant: Good Karma Cafe offers vegan options like plant-based milk and snacks.
+    Shall I confirm?
+- User: Start navigation to Good Karma Cafe.
+- Assistant: Starting navigation to Good Karma Cafe at 2319 Walnut St.
+- User: How’s the parking situation there—easy to find a spot?
+- Assistant: Parking near Good Karma Cafe is available but may be limited during peak
+    hours.

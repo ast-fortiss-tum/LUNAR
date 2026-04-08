@@ -3,11 +3,11 @@
   "turns": [
     {
       "user": "I need my reading lights.",
-      "system": "I can switch your reading light on if you wish from my side."
+      "system": "I can change lights to on if you wish from my side."
     },
     {
       "user": "Yes, turn the lights on.",
-      "system": "Would you like me to swtch all lights on?"
+      "system": "Which illumination requires changes from my side?"
     }
   ],
   "raw_conversation": "------------------------\n**Example 6:**\nUser: \"I need my reading lights.\"\nAssistant: \"I can change lights to on.\"\nUser: \"Yes, turn the lights on.\"\nAssistant: \"Which lights require change from my side?\"\n---------------------------",

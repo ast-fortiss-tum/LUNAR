@@ -1,0 +1,60 @@
+- poi_type:
+  - coffee_shop
+- payment_method:
+  - CASH
+- rating:
+  - 5.0
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: Ground Up Coffee Shop, rated 4.5/5, located at 1926 E Passyunk Ave
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 38.901114
+assistant response time:
+- 1.725621
+- 1.440345
+- 1.529485
+- 1.208625
+- 1.176533
+- 1.978221
+response time report:
+  average: 1.509805
+  max: 1.978221
+  min: 1.176533
+---
+interaction:
+- User: Find me a coffee shop with cash payment, at least 5 stars, and nearby parking.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Got any coffee shops with cash payment and 5-star rating then? Parking’s not
+    a dealbreaker.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: How about a 5-star coffee shop that takes cash? Doesn’t need parking.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Fine, show me the closest 5-star coffee shop then. Forget the cash.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Just find me a damn coffee shop with 5 stars already!
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Ugh, forget the stars—just find me a coffee shop that takes cash!
+- Assistant: I recommend Ground Up Coffee Shop, rated 4.5/5, located at 1926 E Passyunk
+    Ave. Payment details aren't listed. Should I navigate you there or refine the
+    search?

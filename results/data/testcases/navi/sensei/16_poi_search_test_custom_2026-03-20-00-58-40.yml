@@ -1,0 +1,61 @@
+- poi_type:
+  - bakery
+- payment_method:
+  - NO_PREFERENCE
+- rating:
+  - 4.5
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: Four Worlds Bakery
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 47.302649
+assistant response time:
+- 2.042867
+- 1.001429
+- 1.214205
+- 1.631516
+- 1.916334
+- 1.947099
+response time report:
+  average: 1.625575
+  max: 2.042867
+  min: 1.001429
+---
+interaction:
+- User: Find me a top-rated bakery with parking nearby—must be at least 4.5 stars.
+- Assistant: I recommend Heart and Soul Bakery, rated 5.0/5, at 201 S 25th St. It’s
+    a top-rated spot. Should I navigate you there?
+- User: Do they take credit cards or is it NO_PREFERENCE?
+- Assistant: Payment info isn't listed. Call the bakery to confirm credit card acceptance.
+- User: How far is it from here?
+- Assistant: Heart and Soul Bakery is about 1.5 miles from Philadelphia city center.
+    Navigate there?
+- User: Is it usually crowded around this time?
+- Assistant: Crowd levels vary; check Google Maps or Waze for real-time foot traffic
+    insights.
+- User: Got any other bakeries with confirmed credit card acceptance?
+- Assistant: 'I recommend Metropolitan Bakery, rated 4.0/5, at 12th and Arch. Price:
+    $$. Credit card acceptance is likely. Navigate there?'
+- Assistant: 'I recommend Metropolitan Bakery, rated 4.0/5, at 12th and Arch. Price:
+    $$. Credit card acceptance is likely. Navigate there?'
+- User: But it's only 4 stars—got anything else with 4.5+?
+- Assistant: I recommend Four Worlds Bakery, rated 4.5/5, at 4634 Woodland. It’s affordable
+    and well-rated. Should I navigate there?
+- Assistant: I recommend Four Worlds Bakery, rated 4.5/5, at 4634 Woodland. It’s affordable
+    and well-rated. Should I navigate there?

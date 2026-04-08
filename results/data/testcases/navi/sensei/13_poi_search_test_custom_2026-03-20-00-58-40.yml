@@ -1,0 +1,39 @@
+- poi_type:
+  - gas_station
+- payment_method:
+  - CASH
+- rating:
+  - 4.5
+- parking_yes:
+  - YESS
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: Wawa at 2600 Grant Ave, rated 5.0/5, offers gas, cash payment, and nearby
+    parking.
+errors: []
+variables_per_turn:
+- {}
+- {}
+---
+conversation time: 31.715059
+assistant response time:
+- 2.484793
+- 2.517579
+response time report:
+  average: 2.501186
+  max: 2.517579
+  min: 2.484793
+---
+interaction:
+- User: Find me a gas station with cash payment, at least 4.5 stars, and nearby parking.
+- Assistant: I found Wawa at 2600 Grant Ave, rated 5.0/5. It offers gas, cash payment,
+    and nearby parking. Should I navigate you there?
+- User: How far is it from here?
+- Assistant: Wawa is about 12 miles (20 minutes) from Philadelphia city center. Navigate
+    there?

@@ -3,15 +3,15 @@
   "turns": [
     {
       "user": "Hey, can you open the windows half way?",
-      "system": "Something went wrong."
+      "system": "I have quite some problems understanding your request."
     },
     {
       "user": "I need it to be open.",
-      "system": "Please specify what you want me to open? For example the windows."
+      "system": "Can you specify what you desire want me to open?"
     },
     {
       "user": "Open my windows.",
-      "system": "I can currently not access the window mechanism."
+      "system": "Someting went wrong."
     },
     {
       "user": "Stop.",

@@ -1,0 +1,58 @@
+- poi_type:
+  - supermarket
+- payment_method:
+  - CREDIT_CARD
+- rating:
+  - 5.0
+- parking_yes:
+  - NOO
+conversation:
+- interaction_style:
+  - single questions
+- number: 2
+- all_answered:
+    export: true
+    limit: 6
+data_output:
+- poi_name: Great World Supermarket, rated 3.5/5, located at 927 Arch St, about 0.5
+    miles from Philadelphia city center
+errors: []
+variables_per_turn:
+- {}
+- {}
+- {}
+- {}
+- {}
+- {}
+---
+conversation time: 53.620214
+assistant response time:
+- 1.246705
+- 0.951576
+- 2.369029
+- 1.012011
+- 1.164177
+- 1.265846
+response time report:
+  average: 1.33489
+  max: 2.369029
+  min: 0.951576
+---
+interaction:
+- User: Find me a top-rated supermarket with credit card payment and nearby parking.
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Any supermarkets with at least 5 stars that take credit cards and have parking?
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
+- User: Fine, just show me the closest supermarket then, no other preferences.
+- Assistant: I recommend Great World Supermarket, rated 3.5/5, located at 927 Arch
+    St. It's affordable and nearby. Should I navigate there?
+- User: How far is it from here?
+- Assistant: Great World Supermarket is about 0.5 miles from Philadelphia city center.
+    Navigate there?
+- User: Is it usually crowded there?
+- Assistant: Crowd levels at Great World Supermarket vary; weekends may be busier.
+- User: Is there a supermarket with 5 stars that’s less busy?
+- Assistant: Sorry, I cannot find any relevant places. Do you have other preferences
+    in mind?
