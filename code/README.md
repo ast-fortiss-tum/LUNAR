@@ -3,6 +3,11 @@
 <h1 align="center">🌙 LUNAR: Automated Testing of Multi-Turn Conversations in Task-Oriented LLM Systems
 </h1>
 
+<p/>
+<p align="center">
+  <img src="../figures/lunar-logo.jpg" width="800"/>
+</p>
+
 ## Project Structure
 
 The high-level project overview is as follows:
