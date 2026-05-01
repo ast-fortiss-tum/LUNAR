@@ -201,15 +201,70 @@ Both executions produce files showing inter-rater agreement and F1 scores betwee
 
 To replicate the experiment results, run the predefined scripts with seeds 1 to 6 and search budgets as indicated in the description.
 
+## LUNAR Customization Guide
 
-## Customization
+You can customize **LUNAR** in multiple ways:
 
-You can customize LUNAR in multiple ways:
+------------------------------------------------------------------------
 
-1. You can modify the intent mapping if your use case has a restricted intent policy in [here](./lunar/llm/model/conversation_intents.py).
-2. To integrate your chatbot and use case, define a `ChatBot` class that inherits from `IPABase`.
-3. Define custom fitness and oracle functions as done [here](./lunar/examples/navi/fitness_mt.py).
-4. Adjust if needed the judge prompt and the dimension [here](./lunar/judge_eval_mt_cc/prompts.py).
+### 1. Modify the Input Parameter Space
+
+To modify the input parameter space, update the feature configuration
+file (e.g., `./configs/features_navi_mt.json`).
+
+### Parameter Types
+
+Parameters are categorized into: 
+- `categorical` : can not be ordered
+- `ordinal` : can be ordered but are not continuous
+- `continuous`: are continuous
+
+For each parameter, define: - the **name** - the **values** - an
+optional **distribution**
+
+The distribution is defined in the range \[0, 1\] and controls the
+likelihood of selecting a value during test generation. By default equal distribution is chosen.
+
+Define for the intents to be selected and optimized a lower bound and an upper probability bound.
+
+
+------------------------------------------------------------------------
+
+### 2. Configure Multi-Turn Testing
+
+You can control which intents are available for multi-turn testing.
+
+If your use case requires a restricted intent policy, modify the intent
+mapping in:
+
+    ./llm/model/conversation_intents.py
+
+Complete documentation of intents used and intent rules can be found here [INTENTS.md](./lunar/docs/INTENTS.md)
+
+------------------------------------------------------------------------
+
+### 3. Integrate Your Chatbot
+
+To integrate your chatbot and use case, define a `ChatBot` class that
+inherits from `IPABase_*`. Consider to implement the interface functions `simulate_turn` and `simulate_conversation`.
+
+------------------------------------------------------------------------
+
+### 4. Define Fitness and Oracle Functions
+
+Implement custom fitness and oracle functions as shown in:
+
+    ./examples/navi/fitness_mt.py
+
+------------------------------------------------------------------------
+
+### 5. Adjust Judge Prompt and Evaluation Dimensions
+
+If necessary, modify the judge prompt and evaluation dimensions in:
+
+    ./judge_eval_mt_cc/prompts.py
+
+------------------------------------------------------------------------
 
 ## License
 
