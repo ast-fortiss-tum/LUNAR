@@ -47,7 +47,7 @@ To enable comparison with the SENSEI baseline, install SENSEI similarly.
 To verify that installation is successful, run the test-wise execution where the test bot is mocked with an LLM (OpenAI):
 
 ```bash
-bash run_mt_carcontrol_test_openai.sh
+bash run_mt_navi_test_openai.sh
 ```
 
 A results folder should be generated with a structure as follows:
