@@ -1,6 +1,0 @@
-name: all_slots_set
-description: Checks if all slots are set
-active: True
-oracle: not missing_slots()
-yields: |
-  f"Missing slots: {missing_slots()}"
