@@ -5,6 +5,15 @@
 
 LUNAR is an automated testing framework for benchmarking multi-turn conversations in task-oriented LLM applications. It models the conversation space using an intent-based formalization and applies genetic optimization to systematically identify failure-inducing interaction sequences.
 
+## Updates
+
+<div style="background:#fff6d8;border:1px solid #dfc15d;border-left:6px solid #b98c00;border-radius:10px;padding:14px 16px;margin:20px 0;color:#2f2400;line-height:1.6;">
+    <p style="margin:6px 0 10px 0;"><strong>Date:</strong> May 28, 2026</p>
+    <ul><li> Threshold sensitivity resulte are added: <a href="additional/threshold_variation.pdf" style="color:#005a9e;">here</a>
+    </li>
+    </ul>
+</div>
+
 ---
 
 ## Table of Contents
