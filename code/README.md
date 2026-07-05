@@ -5,7 +5,7 @@
 
 <p/>
 <p align="center">
-  <img src="../figures/lunar-logo.jpg" width="800"/>
+  <img src="../figures/lunar-overview.png" width="650"/>
 </p>
 
 ## Project Structure
@@ -40,7 +40,7 @@ python3.11 -m venv venv && pip install -r requirements.txt
 
 LUNAR requires model access to OpenAI LLMs. Configure the endpoints and API key in `.env`.
 
-LUNAR integrates with the CarQA chatbot. Similarly, create a virtual environment and install its dependencies in `carqa`.
+LUNAR integrates with the ConvNavi chatbot. Similarly, create a virtual environment and install its dependencies in `convnavi`.
 
 To enable comparison with the SENSEI baseline, install SENSEI similarly.
 
@@ -63,7 +63,7 @@ Lunar integrates two case studies:
 
 ### Navi
 
-To test the chatbot for Navi, first deploy the CarQA chatbot in a separate terminal. In `.env`, set `NO_NLU=POI`.
+To test the chatbot for Navi, first deploy the ConvNavi chatbot in a separate terminal. In `.env`, set `NO_NLU=POI`.
 
 You can then run a randomized search experiment with the following command:
 
@@ -116,7 +116,7 @@ To run the baseline SENSEI use the corresponding scripts available in the SENSEI
 
 ### Car Control
 
-To run LUNAR for the Car Control case study, switch CarQA to CAR mode in the `.env` file.
+To run LUNAR for the Car Control case study, switch ConvNavi to CAR mode in the `.env` file.
 
 Then you can run LUNAR as follows:
 
