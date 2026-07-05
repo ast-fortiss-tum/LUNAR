@@ -5,7 +5,7 @@
 
 <p/>
 <p align="center">
-  <img src="../figures/lunar-overview.png" width="650"/>
+  <img src="../figures/lunar-overview.png" width="700"/>
 </p>
 
 ## Project Structure
