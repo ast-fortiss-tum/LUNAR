@@ -1,6 +1,6 @@
 
 
-<h1 align="center">🌙 LUNAR: Automated Testing of Multi-Turn Conversations in Task-Oriented LLM Systems
+<h1 align="center">🌙 LUNAR: Search-based Generation of Multi-Turn Conversations through Intent-Level Abstractions
 </h1>
 
 LUNAR is an automated testing framework for benchmarking multi-turn conversations in task-oriented LLM applications. It models the conversation space using an intent-based formalization and applies genetic optimization to systematically identify failure-inducing interaction sequences.
