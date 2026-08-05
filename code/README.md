@@ -1,6 +1,6 @@
 
 
-<h1 align="center">🌙 LUNAR: Automated Testing of Multi-Turn Conversations in Task-Oriented LLM Systems
+<h1 align="center">🌙 LUNAR: Search-based Generation of Multi-Turn Conversations through Intent-Level Abstractions
 </h1>
 
 <p/>
